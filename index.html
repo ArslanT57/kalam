@@ -1,0 +1,1302 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="Kalam: spoken Saudi Arabic in 24 lessons, built around you.">
+<meta name="theme-color" content="#a3262e">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Kalam">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-180.png">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:400;font-display:swap;src:url(readex-400.woff2) format('woff2')}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:500;font-display:swap;src:url(readex-500.woff2) format('woff2')}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:600;font-display:swap;src:url(readex-600.woff2) format('woff2')}@font-face{font-family:'Readex Pro';font-style:normal;font-weight:700;font-display:swap;src:url(readex-700.woff2) format('woff2')}@font-face{font-family:'Noto Naskh Arabic';font-style:normal;font-weight:500;font-display:swap;src:url(naskh-500.woff2) format('woff2')}@font-face{font-family:'Noto Naskh Arabic';font-style:normal;font-weight:700;font-display:swap;src:url(naskh-700.woff2) format('woff2')}</style><title>Kalam Arabic</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>window.KALAM_BUILD="web"</script>
+<style>
+/* Layout: phone-first single column with bottom tabs; at 900px+ a left sidebar rail and two-column home grid. Sadu weave band is the identity mark. */
+:root{
+  --acc-l:#a3262e; --acc-d:#e0585f;
+  --bg:#f6f5f2; --surface:#ffffff; --sunk:#eceae5; --line:#dedad2;
+  --fg:#1d1b24; --ink:#2a2733; --muted:#6a6572;
+  --accent:var(--acc-l); --accent-fg:#ffffff;
+  --gold:#b8861f; --indigo:#2c3a6e; --deep:#2c3a6e; --good:#2f7d4f; --warn:#a86400; --bad:#b3261e;
+  --accent-soft:color-mix(in srgb,var(--accent) 13%,var(--surface));
+  --good-soft:color-mix(in srgb,var(--good) 14%,var(--surface));
+  --warn-soft:color-mix(in srgb,var(--warn) 14%,var(--surface));
+  --bad-soft:color-mix(in srgb,var(--bad) 13%,var(--surface));
+  --gold-soft:color-mix(in srgb,var(--gold) 15%,var(--surface));
+  --indigo-soft:color-mix(in srgb,var(--indigo) 12%,var(--surface));
+  --f-ui:"Readex Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-ar:"Noto Naskh Arabic","Geeza Pro","Arabic Typesetting","Traditional Arabic",serif;
+  --r:14px; --shadow:0 1px 2px rgba(20,16,30,.05),0 4px 14px rgba(20,16,30,.05);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#131218; --surface:#1d1b24; --sunk:#26232e; --line:#34303d;
+  --fg:#efedf2; --ink:#e4e1ea; --muted:#a49eac;
+  --accent:var(--acc-d); --accent-fg:#160b0c;
+  --gold:#e3b54e; --indigo:#a3b0ec; --deep:#2b3463; --good:#5cc98a; --warn:#f0a843; --bad:#f07a72;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131218; --surface:#1d1b24; --sunk:#26232e; --line:#34303d;
+  --fg:#efedf2; --ink:#e4e1ea; --muted:#a49eac;
+  --accent:var(--acc-d); --accent-fg:#160b0c;
+  --gold:#e3b54e; --indigo:#a3b0ec; --deep:#2b3463; --good:#5cc98a; --warn:#f0a843; --bad:#f07a72;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+  color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.5;-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg)}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px calc(96px + env(safe-area-inset-bottom,0px))}
+.ar{font-family:var(--f-ar);direction:rtl;unicode-bidi:isolate}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:600;letter-spacing:-.01em}
+h1{font-size:1.55rem;line-height:1.25}
+h2{font-size:1.15rem;line-height:1.3}
+h3{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:600}
+p{margin:0}
+a{color:var(--accent)}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+input,select,textarea{font:inherit;font-size:16px;color:var(--fg)}
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
+.stack{display:flex;flex-direction:column;gap:14px}
+.stack.lg{gap:20px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spread{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.muted{color:var(--muted)} .small{font-size:.86rem} .tiny{font-size:.76rem}
+.num{font-variant-numeric:tabular-nums}
+.grow{flex:1;min-width:0}
+
+/* Brand */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 12px}
+.brand{display:flex;align-items:center;gap:10px;border:0;background:none;padding:0}
+.mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;flex:none}
+.mark svg{width:24px;height:24px}
+.word{display:flex;flex-direction:column;line-height:1.05;text-align:left}
+.word b{font-size:1.15rem;letter-spacing:-.02em}
+.word span{font-family:var(--f-ar);color:var(--accent);font-size:.95rem}
+.topr{display:flex;gap:8px;align-items:center}
+.iconbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;width:42px;height:42px;display:inline-grid;place-items:center;flex:none}
+.iconbtn svg{width:20px;height:20px}
+.avatar{width:42px;height:42px;border-radius:999px;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;font-weight:600;border:0;flex:none;font-size:1rem}
+.avatar.xl{width:72px;height:72px;font-size:1.6rem}
+.sadu{height:12px;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M0 12L6 0L12 12L18 0L24 12Z'/%3E%3Crect y='5' width='24' height='2'/%3E%3C/svg%3E") repeat-x center/24px 12px;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12'%3E%3Cpath d='M0 12L6 0L12 12L18 0L24 12Z'/%3E%3Crect y='5' width='24' height='2'/%3E%3C/svg%3E") repeat-x center/24px 12px}
+.sadu.thin{height:6px;-webkit-mask-size:12px 6px;mask-size:12px 6px;opacity:.55}
+main{margin-top:16px;animation:rise .22s ease both}
+@keyframes rise{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Surfaces */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+.panel.flat{box-shadow:none}
+.greet .ar{font-size:1.6rem;color:var(--accent);line-height:1.5;display:block;text-align:left}
+.greet p{color:var(--muted)}
+.next{display:grid;grid-template-columns:1fr;gap:14px;overflow:hidden;position:relative}
+.next .art{background:var(--accent-soft);border-radius:12px;display:grid;place-items:center;padding:6px 10px;aspect-ratio:2/1;max-height:190px}
+.next .art svg{width:100%;height:100%;max-width:300px}
+.review{background:var(--deep);color:#fff;border:0;position:relative;overflow:hidden}
+:root .review{--rv:#fff}
+.review .big{font-size:2.5rem;font-weight:700;line-height:1}
+.review .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;opacity:.78}
+.review .sadu{position:absolute;left:0;right:0;bottom:0;background:#fff;opacity:.16}
+.stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stats3 b{font-size:1.35rem;display:block;font-variant-numeric:tabular-nums;line-height:1.15}
+
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:11px 16px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;transition:transform .08s ease,background .15s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.btn.light{background:#fff;color:#1d1b24;border-color:#fff}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--accent);padding-inline:8px}
+.btn.block{width:100%}
+.btn.sm{min-height:36px;padding:6px 12px;font-size:.88rem;border-radius:10px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+@media (hover:hover){.btn:hover:not(:disabled){filter:brightness(.97)} .lesson:hover,.mode:hover,.choice:hover{border-color:var(--accent)}}
+
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:.74rem;padding:2px 9px;border-radius:999px;background:var(--sunk);color:var(--muted);font-weight:500;white-space:nowrap}
+.chip.acc{background:var(--accent-soft);color:var(--accent)}
+.chip.good{background:var(--good-soft);color:var(--good)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.chip.gold{background:var(--gold-soft);color:var(--gold)}
+.chip.ind{background:var(--indigo-soft);color:var(--indigo)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Illustrations */
+.ill{display:block}
+.ill *{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .f{fill:var(--accent-soft)}
+.ill .a{stroke:var(--accent)} .ill .g{stroke:var(--gold)}
+.ill text{fill:var(--accent);stroke:none;font-family:var(--f-ar);font-weight:700}
+.ill .dot{fill:var(--ink);stroke:none}
+.ill.anim :is(path,circle,rect,line,ellipse,polyline):not(.nd):not(.dot){stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1s cubic-bezier(.4,.1,.3,1) forwards;animation-delay:calc(var(--i,0) * 70ms)}
+.ill.anim text{animation:fadein .5s ease both;animation-delay:.6s}
+.ill.float{animation:float 5s ease-in-out infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes float{50%{transform:translateY(-3px)}}
+
+/* Lists */
+.list{display:flex;flex-direction:column}
+.item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.item .ar{font-size:1.32rem;line-height:1.55;text-align:left}
+.item .en{color:var(--muted);font-size:.9rem}
+.item .note{font-size:.78rem;color:var(--muted)}
+.spk{border:0;background:var(--sunk);border-radius:999px;width:40px;height:40px;display:grid;place-items:center;flex:none;color:var(--accent)}
+.spk svg{width:18px;height:18px}
+.spk.playing{background:var(--accent);color:var(--accent-fg)}
+
+.lessons{display:grid;gap:10px}
+.lesson{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-align:left;width:100%;transition:border-color .15s}
+.lesson .thumb{width:76px;height:54px;border-radius:9px;background:var(--accent-soft);display:grid;place-items:center;flex:none;padding:3px}
+.lesson .thumb svg{width:100%;height:100%}
+.lesson .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.lesson .body b{font-size:.95rem;line-height:1.3}
+.lesson.done .thumb{background:var(--good-soft)}
+.lesson .go{width:38px;height:38px;border-radius:999px;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;flex:none}
+.lesson .go svg{width:16px;height:16px}
+.bar{height:6px;background:var(--sunk);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .4s ease}
+.bar.good i{background:var(--good)}
+
+.grammar{background:var(--indigo-soft);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.grammar b{color:var(--indigo)}
+.grammar .ar{font-size:1.12rem}
+.rootblock{display:flex;flex-direction:column;padding:6px 0 10px;border-bottom:1px solid var(--line)}
+.rootblock:last-child{border-bottom:0}
+.rootlbl{font-family:var(--f-ar);font-size:1.3rem;color:var(--accent);font-weight:700;letter-spacing:.25em;text-align:left}
+details.sec>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:34px}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::after{content:"";width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-right:4px;transition:transform .15s}
+details.sec[open]>summary::after{transform:rotate(-135deg)}
+.task{display:flex;gap:12px;align-items:flex-start;background:var(--gold-soft);border-radius:12px;padding:12px 14px}
+.task input{width:22px;height:22px;accent-color:var(--good);flex:none;margin-top:1px}
+.hero-l{background:var(--accent-soft);border-radius:var(--r);padding:12px;display:grid;place-items:center}
+.hero-l svg{width:100%;max-width:340px;height:auto}
+
+/* Practice + sessions */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mode{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:4px;min-height:112px;transition:border-color .15s}
+.mode svg{width:26px;height:26px;color:var(--accent);margin-bottom:4px}
+.mode b{font-size:1rem}
+.mode:disabled{opacity:.45}
+.seg{display:flex;background:var(--sunk);border-radius:12px;padding:3px;gap:3px;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{border:0;background:transparent;border-radius:9px;padding:8px 12px;font-size:.86rem;white-space:nowrap;flex:1 0 auto}
+.seg button[aria-pressed="true"]{background:var(--surface);font-weight:600;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+body.session .top,body.session .wrap>.sadu,body.session nav.tabs{display:none}
+body.session .wrap{padding-block:8px 0;max-width:600px}
+body.session main{margin-top:0}
+.sess{display:flex;flex-direction:column;gap:12px;min-height:calc(100dvh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px) - 8px)}
+.sessbar{display:flex;align-items:center;gap:12px;padding-top:4px}
+.sessbar .bar{flex:1}
+.x{border:1px solid var(--line);background:var(--surface);border-radius:999px;width:42px;height:42px;display:grid;place-items:center;flex:none;font-size:1.3rem;line-height:1}
+.foot{position:sticky;bottom:0;background:var(--bg);padding-block:10px calc(12px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;margin-top:auto;z-index:2}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 18px;flex:1;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;position:relative;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s}
+.card.tap{cursor:pointer}
+.card.q{flex:0 1 auto;min-height:220px}
+.card .ar.big{font-size:clamp(2rem,9vw,2.8rem);line-height:1.6;font-weight:700}
+.card .en.big{font-size:1.45rem;font-weight:600}
+.card .ans{display:flex;flex-direction:column;gap:8px;align-items:center;border-top:1px dashed var(--line);padding-top:14px;width:100%;animation:rise .2s ease both}
+.card .corner{position:absolute;top:12px;left:12px}
+.hint{font-size:.76rem;color:var(--muted);text-align:center}
+.kbd{display:none}
+@media (hover:hover) and (pointer:fine){.kbd{display:inline-block;font-size:.7rem;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;color:var(--muted);margin-left:6px;background:var(--surface)} .touch-only{display:none}}
+.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.grade{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:8px 4px;display:flex;flex-direction:column;align-items:center;gap:1px;font-weight:600;min-height:62px}
+.grade small{font-weight:400;color:var(--muted);font-size:.72rem}
+.grade.again{color:var(--bad)} .grade.hard{color:var(--warn)} .grade.good{color:var(--good)} .grade.easy{color:var(--indigo)}
+.opts{display:grid;gap:8px}
+.opt{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px 14px;text-align:left;min-height:56px;display:flex;align-items:center;gap:10px;transition:background .15s,border-color .15s}
+.opt .ar{font-size:1.3rem}
+.opt .k{font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 6px;flex:none}
+.opt.right{border-color:var(--good);background:var(--good-soft);animation:pop .3s ease}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft);animation:shake .3s ease}
+@keyframes pop{50%{transform:scale(1.02)}}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.mic{width:88px;height:88px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-fg);display:grid;place-items:center;box-shadow:0 0 0 7px var(--accent-soft)}
+.mic svg{width:34px;height:34px}
+.mic.on{animation:pulse 1.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent-soft)}70%{box-shadow:0 0 0 20px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.verdict{border-radius:12px;padding:12px;width:100%;display:flex;flex-direction:column;gap:4px;text-align:left}
+.verdict.good{background:var(--good-soft);color:var(--good)}
+.verdict.close{background:var(--warn-soft);color:var(--warn)}
+.verdict.bad{background:var(--bad-soft);color:var(--bad)}
+.verdict .heard{color:var(--fg)}
+.teach{display:grid;gap:10px;width:100%}
+.tcard{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-align:left;animation:rise .25s ease both}
+.tcard .ar{font-size:1.55rem;line-height:1.5;text-align:left}
+.tcard .txt{flex:1;min-width:0;display:flex;flex-direction:column}
+.flowbody{flex:1;display:flex;flex-direction:column;gap:14px}
+.flowhead{display:flex;flex-direction:column;gap:4px}
+.flowhead .ar.root{font-size:2.6rem;letter-spacing:.3em;color:var(--accent);font-weight:700;text-align:left}
+
+/* Roots */
+.roots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.rootchip{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:1px}
+.rootchip .ar{font-size:1.25rem;font-weight:700;color:var(--accent);letter-spacing:.15em}
+.rootchip small{color:var(--muted);font-size:.72rem;text-align:center}
+
+/* Home bits */
+.ring{width:84px;height:84px;flex:none}
+.ring circle{fill:none;stroke-width:9}
+.ring .bg{stroke:var(--sunk)} .ring .fg{stroke:var(--good);stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+.ring text{fill:var(--fg);font-family:var(--f-ui);font-weight:700;font-size:20px}
+.heat{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);gap:3px;overflow-x:auto;padding-bottom:2px}
+.heat i{width:12px;height:12px;border-radius:3px;background:var(--sunk)}
+.heat i.l1{background:color-mix(in srgb,var(--good) 35%,var(--sunk))}
+.heat i.l2{background:color-mix(in srgb,var(--good) 65%,var(--sunk))}
+.heat i.l3{background:var(--good)}
+.heat i.today{outline:1.5px solid var(--fg)}
+.banner{display:flex;gap:12px;align-items:center;background:var(--accent-soft);border-radius:var(--r);padding:12px 14px}
+.banner svg{width:28px;height:28px;color:var(--accent);flex:none}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:2px}
+.tile b{font-size:1.4rem;font-variant-numeric:tabular-nums;line-height:1.15}
+.tile span{font-size:.74rem;color:var(--muted)}
+.rowlink{display:flex;align-items:center;gap:12px;padding:13px 2px;border:0;border-bottom:1px solid var(--line);background:none;width:100%;text-align:left}
+.rowlink:last-child{border-bottom:0}
+.rowlink svg{width:22px;height:22px;color:var(--accent);flex:none}
+.rowlink .chev{width:16px;height:16px;color:var(--muted)}
+
+/* Forms + onboarding */
+.field{display:flex;flex-direction:column;gap:6px;font-size:.88rem;color:var(--muted)}
+.field>span{font-weight:500;color:var(--fg)}
+input[type=text],input[type=search],input[type=number],select,textarea{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 13px;min-height:48px;width:100%}
+textarea{min-height:90px;resize:vertical}
+input.ar{text-align:right;font-family:var(--f-ar);font-size:1.15rem}
+input[type=range]{width:100%;accent-color:var(--accent)}
+.check{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.check input{flex:none;margin-top:1px}
+.choices{display:grid;gap:10px}
+.choices.two{grid-template-columns:1fr 1fr}
+.choice{border:1.5px solid var(--line);background:var(--surface);border-radius:14px;padding:14px;text-align:left;display:flex;flex-direction:column;gap:3px;min-height:60px;transition:border-color .15s,background .15s}
+.choice[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.choice b{font-size:.98rem}
+.choice .ar{font-size:1.25rem;color:var(--accent);text-align:left}
+.swatches{display:flex;gap:12px;flex-wrap:wrap}
+.swatch{width:56px;height:56px;border-radius:16px;border:3px solid transparent;display:grid;place-items:center;color:#fff;font-weight:700}
+.swatch[aria-pressed="true"]{border-color:var(--fg)}
+.onb{min-height:calc(100dvh - 40px);display:flex;flex-direction:column;gap:18px;max-width:520px;margin:0 auto;padding-top:8px}
+.onb .dots{display:flex;gap:6px}
+.onb .dots i{height:5px;flex:1;border-radius:9px;background:var(--sunk)}
+.onb .dots i.on{background:var(--accent)}
+.onb .q h1{font-size:1.6rem}
+.onb .q p{color:var(--muted);margin-top:6px}
+.preview{background:var(--accent-soft);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.preview .ar{font-size:1.35rem;text-align:left}
+body.onboarding .top,body.onboarding .wrap>.sadu,body.onboarding nav.tabs{display:none}
+body.onboarding .wrap{padding-block:12px 0}
+
+/* Tabs */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));z-index:30}
+nav.tabs .navbrand{display:none}
+nav.tabs button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:.7rem;color:var(--muted);padding:4px 0;min-height:50px;border-radius:12px}
+nav.tabs button svg{width:23px;height:23px}
+nav.tabs button[aria-current="page"]{color:var(--accent);font-weight:600}
+.toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(12px + env(safe-area-inset-top,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:.88rem;z-index:60;max-width:calc(100% - 32px);box-shadow:0 6px 24px rgba(0,0,0,.2);animation:rise .2s ease both}
+.back{border:0;background:none;color:var(--accent);padding:6px 0;font-weight:500;display:inline-flex;align-items:center;gap:4px;align-self:flex-start}
+.back svg{width:18px;height:18px}
+.empty{padding:26px 10px;text-align:center;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+.empty svg{width:160px;height:auto}
+.confirm{display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:var(--bad-soft);padding:12px;border-radius:12px}
+.notice{border-radius:12px;padding:12px 14px;background:var(--warn-soft);font-size:.88rem;display:flex;flex-direction:column;gap:4px}
+.notice b{color:var(--warn)}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:middle}
+td.ar{font-size:1.15rem}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:70}
+.homegrid{display:grid;gap:14px}
+
+/* Desktop */
+@media (min-width:900px){
+  body:not(.session):not(.onboarding){padding-left:232px}
+  nav.tabs{top:0;right:auto;width:232px;bottom:0;display:flex;flex-direction:column;align-items:stretch;gap:4px;padding:22px 14px;border-top:0;border-right:1px solid var(--line);background:var(--surface);backdrop-filter:none}
+  nav.tabs .navbrand{display:flex;margin:0 6px 18px}
+  nav.tabs button{flex-direction:row;justify-content:flex-start;gap:12px;font-size:.95rem;padding:10px 12px;min-height:46px}
+  nav.tabs button[aria-current="page"]{background:var(--accent-soft)}
+  .top .brand{visibility:hidden}
+  .wrap{padding-block:18px 48px}
+  .homegrid{grid-template-columns:1.25fr 1fr}
+  .homegrid .span{grid-column:1/-1}
+  .next{grid-template-columns:1fr 1.1fr;align-items:center}
+  .modes{grid-template-columns:repeat(4,1fr)}
+  .lessons{grid-template-columns:1fr 1fr}
+  .card{min-height:320px}
+  .sess{min-height:auto;padding-top:20px}
+  .sess .foot{margin-top:4px;position:static}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.ill.anim :is(path,circle,rect,line,ellipse,polyline){stroke-dashoffset:0}}
+</style>
+
+</head><body><div class="wrap" id="app">
+  <header class="top">
+    <button class="brand" data-tab="home" aria-label="Kalam home"><span class="mark" id="mark1"></span><span class="word"><b>Kalam</b><span>كلام</span></span></button>
+    <div class="topr"><button class="iconbtn" id="searchBtn" aria-label="Search all words"></button><button class="avatar" id="avatarBtn" aria-label="Your profile"></button></div>
+  </header>
+  <div class="sadu" aria-hidden="true"></div>
+  <main id="main"></main>
+</div>
+<nav class="tabs" id="tabs" aria-label="Sections"></nav>
+<div class="toast" id="toast" role="status" hidden></div>
+<canvas id="confetti" hidden></canvas>
+<input type="file" id="fileIn" accept=".json,application/json,text/plain" hidden>
+
+<script>
+// Course data. Roots: "root|ar=en;ar=en". Words: "ar|en|note". Phrases: "ar|en|note".
+window.COURSE = [
+{n:1,p:1,t:"Greetings and introducing yourself",
+g:["No \"is\" in the present","Arabic drops the verb \"to be\". أنا من باكستان = I am from Pakistan. هو مشغول = he is busy."],
+task:"Complete a full greeting exchange with three different people.",
+r:["س ل م|سلام=peace (U);مع السلامة=goodbye;سلامات=get well, greetings;استلم=received",
+"ع ر ف|يعرف=knows;أعرف=I know;ما أعرف=I don't know;معرفة=acquaintance, knowledge (U maarifat)",
+"ش ك ر|شكرًا=thanks (U);مشكور=thanked (reply to a favour)"],
+w:["أنا|I|","إنت|you (m)|","إنتي|you (f)|","هو / هي|he / she|","إيه / لا|yes / no|إيه is the everyday Saudi yes","زين|good, fine|Very common in Saudi speech","وش|what|Saudi. MSA is ماذا","وين|where|","كيف حالك|how are you|","الحمد لله|praise be to God (I'm fine)|(U)","هلا / أهلين|hi|","حياك الله|welcome|Reply: الله يحييك"],
+ph:["السلام عليكم|Peace be upon you (hello)|","وعليكم السلام|And peace be upon you (reply)|","كيف حالك؟ الحمد لله، بخير|How are you? Fine, thank God|","وش اسمك؟|What's your name?|","اسمي {N}|My name is {NE}|","أنا من {O}، [ساكن~ساكنة] في {C}|I'm from {OE}, I live in {CE}|","الله يعطيك العافية|God give you strength (to someone working)|Reply: الله يعافيك"]},
+{n:2,p:1,t:"Numbers, money and shopping",
+g:["أبغى + noun","أبغى هذا. أبغى قهوة. Add a verb later: أبغى أدفع (I want to pay)."],
+task:"Buy something from start to finish in Arabic.",
+r:["ش ر ي|اشترى=bought;يشتري=buys;شراء=purchase","ب ي ع|باع=sold;يبيع=sells;بيع=sale","ح س ب|حساب=bill, account (U hisaab);يحسب=calculates;محاسب=accountant","د ف ع|دفع=paid;يدفع=pays;دفعة=instalment"],
+w:["واحد، ثنين، ثلاث، أربع، خمس|1 to 5|Saudi drops the ا in اثنين","ست، سبع، ثمان، تسع، عشر|6 to 10|","عشرين، مية، ألف|20, 100, 1,000|","كم / بكم|how many / for how much|","أبغى|I want|Key Saudi word. MSA is أريد","عطني|give me|","هذا / هذي|this (m) / this (f)|","غالي / رخيص|expensive / cheap|","خصم|discount|","شبكة / كاش|card payment / cash|شبكة is the card machine"],
+ph:["بكم هذا؟|How much is this?|","غالي شوي. فيه خصم؟|A bit expensive. Is there a discount?|","أبغى هذا، لو سمحت|I want this, please|","أدفع شبكة|I'll pay by card|"]},
+{n:3,p:1,t:"Getting around",
+g:["Commands","Drop the present prefix to give an order: يروح goes, روح go. يوقف stops, وقّف stop."],
+task:"Direct a driver to your home or office entirely in Arabic.",
+r:["و ص ل|وصل=arrived;وصّلني=take me;توصيل=delivery","ر و ح|راح=went;يروح=goes;رايح=going","و ق ف|وقف=stopped;وقّف=stop!;موقف=parking (U)","ق ر ب|قريب=near (U);أقرب=nearest"],
+w:["يمين / يسار|right / left|","سيدا / على طول|straight on|","لف|turn|لف يمين = turn right","هنا / هناك|here / there|","بعيد|far|","الإشارة|traffic light|","الدوار|roundabout|","مخرج|exit|Used on city ring roads","جا / يجي|came / comes|Saudi. MSA is جاء / يجيء","متى|when|"],
+ph:["وصّلني المكتب، لو سمحت|Take me to the office, please|","لف يمين عند الإشارة|Turn right at the traffic light|","سيدا، بعدين يسار|Straight on, then left|","وقّف هنا|Stop here|","أنا [رايح~رايحة] البيت|I'm going home|"]},
+{n:4,p:1,t:"Food and restaurants",
+g:["فيه / ما فيه","\"There is / there isn't\". فيه شاهي؟ ما فيه."],
+task:"Order a full meal with at least one change to the dish.",
+r:["أ ك ل|أكل=food, ate;ياكل=eats;مأكولات=dishes","ش ر ب|شرب=drank;مشروب=drink;شراب=syrup, drink (! Urdu sharab = alcohol)","ط ل ب|طلب=order, request;يطلب=orders;طلبات=orders (! Urdu talab = salary, craving)","ج و ع|جوعان=hungry","ع ط ش|عطشان=thirsty"],
+w:["مويه|water|Saudi. MSA is ماء","شاهي / قهوة|tea / coffee|قهوة said \"gahwa\"","حليب / سكر|milk / sugar|","رز / لحم / دجاج / خبز|rice / meat / chicken / bread|","مع / بدون|with / without|","حار / بارد|spicy or hot / cold|","لذيذ|tasty|(U)","مرة|very|Saudi. مرة لذيذ = very tasty","شوي|a little|","سفري / محلي|takeaway / dine in|"],
+ph:["سفري ولا محلي؟|Takeaway or dine in?|","أبغى شاهي بدون سكر|I want tea without sugar|","بدون حار، لو سمحت|Not spicy, please|","مرة لذيذ|Very tasty|","الحساب، لو سمحت|The bill, please|"]},
+{n:5,p:1,t:"Time, days and routine",
+g:["Present tense","Learn one verb fully. أشتغل I work · تشتغل you work · يشتغل he works · تشتغل she works · نشتغل we work · يشتغلون they work."],
+task:"Describe your working day aloud in six sentences.",
+r:["و ق ت|وقت=time (U);مؤقت=temporary","ي و م|يوم=day;اليوم=today;أيام=days","ش غ ل|شغل=work;يشتغل=works;مشغول=busy (U)","د و م|دوام=working hours;دايم=always;مداوم=attending work"],
+w:["الحين|now|Saudi. MSA is الآن","بعدين|later|","أمس / بكرة|yesterday / tomorrow|","قبل / بعد|before / after|(U)","أسبوع / شهر / سنة|week / month / year|","الأحد، الاثنين، الثلاثاء، الأربعاء|Sun, Mon, Tue, Wed|","الخميس، الجمعة، السبت|Thu, Fri, Sat|","ساعة / نص / ربع|hour / half / quarter|","إلا|less, minus|ثلاث إلا ربع = 2:45"],
+ph:["الساعة كم؟|What time is it?|","الساعة ثلاث ونص|It's half past three|","أنا [مشغول~مشغولة] الحين. أكلمك بعدين|I'm busy now. I'll call you later|","الدوام من ثمان إلى خمس|Working hours are from eight to five|","نشوفك بكرة، إن شاء الله|See you tomorrow, God willing|"]},
+{n:6,p:1,t:"Family and describing people",
+g:["Possessive endings","These attach to nouns. كتابي my book · كتابك your book · كتابه his · كتابها her · كتابنا our · كتابكم your (pl) · كتابهم their."],
+task:"Talk about your family for one minute without stopping.",
+r:["و ل د|ولد=boy, son;والد=father (U walid);أولاد=children (U aulaad)","ز و ج|زوج=husband;زوجة=wife;متزوج=married","ك ب ر|كبير=big, older (U);أكبر=bigger","ص غ ر|صغير=small, younger;أصغر=smaller"],
+w:["أبوي / أمي|my father / my mother|","أخو / أخت|brother / sister|","عيال|kids|Everyday Saudi word","بنت|girl, daughter|","أهل|family|(U)","صاحب / صديق|friend|(! Urdu sahib = sir)","رجّال / حرمة|man / woman|حرمة is normal and polite in Saudi","حلو|nice, sweet, pretty|","طيب|kind, OK|","جديد / قديم|new / old|(U)"],
+ph:["عندك عيال؟|Do you have kids?|","عندي أخو واحد وأخت|I have one brother and a sister|","هذا صاحبي من الشغل|This is my friend from work|","أخوي الكبير في {O}|My older brother is in {OE}|"]},
+{n:7,p:2,t:"The past and what you did",
+g:["Past tense","كتبت I wrote / you (m) wrote · كتبتي you (f) wrote · كتب he wrote · كتبت she wrote · كتبنا we wrote · كتبتوا you (pl) wrote · كتبوا they wrote."],
+task:"Each evening this week, say three things you did that day.",
+r:["ك ت ب|كتب=wrote;كتاب=book (U);مكتب=office (U);مكتوب=written (U maktoob)","س و ي|سوّى=did, made;يسوّي=does;وش سويت؟=what did you do?","ش و ف|شاف=saw;يشوف=sees;شفت=I saw","خ ل ص|خلّص=finished;خلاص=done, enough (U)"],
+w:["رجع|returned|","طلع|went out|","دخل|entered|(U dakhil)","قام|got up|","نام|slept|","بدا|started|MSA is بدأ","بدري / متأخر|early / late|","الأسبوع اللي فات|last week|","اللي|who, which, that|Joins sentences: الشخص اللي شفته"],
+ph:["وش سويت أمس؟|What did you do yesterday?|","خلّصت الشغل بدري ورجعت البيت|I finished work early and went home|","شفت الإيميل؟|Did you see the email?|","خلاص، تمام|Done, all good|"]},
+{n:8,p:2,t:"Saying no and asking questions",
+g:["Three ways to say \"not\"","ما before verbs (ما رحت), مو before nouns and adjectives (مو زين), لا before a command (لا تروح)."],
+task:"Ask \"وش يعني ...؟\" about five words you hear this week.",
+r:["ف ه م|فهم=understood (U fahm);مفهوم=understood, clear;تفهم=you understand","س أ ل|سأل=asked;سؤال=question (U);مسؤول=responsible, official (U)","ج و ب|جواب=answer (U);جاوب=answered","ع ن ي|يعني=it means, I mean;معنى=meaning (U)"],
+w:["ليش|why|MSA is لماذا","مين|who|","أي|which|","ما|not (with verbs)|ما رحت = I didn't go","مو|not (nouns, adjectives)|مو زين = not good","لا تروح|don't go|لا + command","مشكلة|problem|(U mushkil)","أكيد|sure, of course|","يمكن|maybe|","ممكن|possible, could you|ممكن تساعدني؟"],
+ph:["وش يعني ...؟|What does ... mean?|Your most useful learning phrase","ما فهمت. ممكن تعيد؟|I didn't understand. Could you repeat?|","ممكن تتكلم بشويش؟|Could you speak slowly?|","مين المسؤول؟|Who is in charge?|","مو مشكلة|No problem|","لا تشيل هم|Don't worry|"]},
+{n:9,p:2,t:"Plans and the future",
+g:["Future with بـ","Put بـ before the present verb. أسافر I travel, بسافر I will travel."],
+task:"Book something (appointment, table, service) in Arabic.",
+r:["س ف ر|سافر=travelled;سفر=travel (U safar);مسافر=traveller (U)","ح ج ز|حجز=booked, booking;محجوز=reserved","و ع د|موعد=appointment;وعد=promise (U waada)","ع ز م|عزم=invited;عزيمة=invitation, dinner party"],
+w:["بروح|I will go|بـ + verb = will","إن شاء الله|God willing|Used with any future plan","الجاي|next, coming|الأسبوع الجاي = next week","إجازة|holiday, leave|(! Urdu ijazat = permission)","نهاية الأسبوع|weekend|","متأكد|sure|","خطة|plan|","يمديني|I have time to, I can manage|Very Saudi"],
+ph:["بسافر {T} الشهر الجاي، إن شاء الله|I'll travel to {TE} next month, God willing|","وش بتسوي نهاية الأسبوع؟|What will you do at the weekend?|","أبغى أحجز موعد|I want to book an appointment|","ما يمديني اليوم. بكرة إن شاء الله|I can't manage today. Tomorrow, God willing|"]},
+{n:10,p:2,t:"Likes, needs and opinions",
+g:["عجبني works backwards","The thing does the pleasing. عجبني المطعم = I liked the restaurant. ما عجبني = I didn't like it."],
+task:"Give your opinion on three things in Arabic.",
+r:["ح ب ب|أحب=I love, like;حبيب=dear (U);محبوب=beloved (U)","ع ج ب|عجبني=I liked it;عجيب=strange (U ajeeb)","ف ض ل|أفضّل=I prefer;أفضل=better, best (U afzal);تفضّل=go ahead, please","ر أ ي|رأي=opinion (U raay);رأيي=my opinion"],
+w:["أتوقع / أظن|I think|أتوقع is very common in Saudi","صح / غلط|right / wrong|(U sahih, ghalat)","لازم|must|(U lazim)","مهم|important|(U)","عادي|normal, no big deal|","تمام|fine, perfect|(U)","يحتاج|needs|","بس|only, but, enough|"],
+ph:["عجبني المطعم مرة|I really liked the restaurant|","أفضّل الشاهي على القهوة|I prefer tea to coffee|","رأيي إن هذا أفضل|In my opinion this is better|","لازم أروح الحين|I have to go now|"]},
+{n:11,p:2,t:"Home and fixing problems",
+g:["Describing with adjectives","The adjective comes after the noun and matches its gender. بيت كبير, شقة كبيرة."],
+task:"Report a problem to your building or a service company in Arabic.",
+r:["س ك ن|ساكن=living;سكن=accommodation;مسكن=dwelling","ف ت ح|فتح=opened;مفتاح=key;مفتوح=open","ق ف ل|قفل=closed, lock (U);مقفل=closed","ص ل ح|صلّح=fixed;تصليح=repair;صالح=valid"],
+w:["شقة / غرفة|flat / room|","مطبخ / حمام|kitchen / bathroom|","باب / شباك|door / window|","مكيف|air conditioner|Essential in the Gulf heat","كهربا / مويه|electricity / water|","خربان|broken|","فني|technician|","زحمة|traffic, crowd|","مالك / مؤجر|owner / landlord|"],
+ph:["المكيف خربان|The air conditioner is broken|","متى يجي الفني؟|When is the technician coming?|","المحل مفتوح؟ لا، مقفل الحين|Is the shop open? No, it's closed now|","الطريق زحمة مرة|The road is very busy|"]},
+{n:12,p:2,t:"Health and asking for help",
+g:["يوجعني + body part","Use it for any pain. ظهري يوجعني = my back hurts. راسي يوجعني = my head hurts."],
+task:"Ask a pharmacist for something in Arabic.",
+r:["ت ع ب|تعبان=tired, unwell;تعب=tiredness","ر ي ح|ارتاح=rested;مرتاح=comfortable;راحة=rest (U raahat)","ع ل ج|علاج=treatment (U ilaaj);عالج=treated","س ع د|ساعد=helped;مساعدة=help;يساعد=helps"],
+w:["مستشفى / صيدلية|hospital / pharmacy|","دكتور / دوا|doctor / medicine|(U dawa)","يوجعني|it hurts me|","راس / بطن / ظهر|head / stomach / back|","حرارة|fever, heat|(U hararat)","مستعجل|urgent|(U)","إسعاف|ambulance|","أحس|I feel|"],
+ph:["أحس بتعب|I feel unwell|","راسي يوجعني من أمس|My head has hurt since yesterday|","فيه صيدلية قريبة؟|Is there a pharmacy nearby?|","ممكن تساعدني، لو سمحت؟|Could you help me, please?|"]},
+{n:13,p:3,t:"Hospitality and polite responses",
+g:["The pairs are fixed","Saudi conversation runs on call-and-response phrases. Do not translate them literally. Learn each as one unit."],
+task:"Use أبشر, ما قصرت and يعطيك العافية naturally at work this week.",
+r:["ض ي ف|ضيف=guest;ضيافة=hospitality","ك ر م|كريم=generous (U);تكرم=gladly, for you","ز و ر|زار=visited;زيارة=visit (U ziyarat)","ج م ع|اجتماع=meeting;جماعة=group (U jamaat);الجمعة=Friday"],
+w:[],
+ph:["يعطيك العافية|God give you strength|Reply: الله يعافيك","ما قصّرت|You did more than enough (thanks)|Reply: ما سويت شي","تسلم|Bless you (thanks)|Reply: الله يسلمك","مبروك|Congratulations|Reply: الله يبارك فيك","عساك بخير|Hope you're well|Reply: الحمد لله، وإنت؟","تفضّل|Please, go ahead|Reply: شكرًا","سم|Yes? At your service (when called)|","أبشر|Consider it done|Reply to a request","معليش|Sorry, never mind|Reply: ولا يهمك","حياك الله، تفضّل|Welcome, come in|"]},
+{n:14,p:3,t:"Calls and messages",
+g:["Object endings on verbs","The same endings from Lesson 6 attach to verbs. كلّمني call me · أكلّمك I'll call you · أرسله send it · شفتها I saw her."],
+task:"Make one phone call in Arabic, for a delivery or a booking.",
+r:["ك ل م|كلّم=spoke to, called;كلام=talk (U kalaam);مكالمة=phone call","ر س ل|أرسل=sent;رسالة=message (U risala)","ر د د|ردّ=replied, answered","و ص ل|تواصل=contact;اتصل=called"],
+w:["جوال|mobile phone|","رقم|number|(U)","ألو|hello (on the phone)|","لحظة|one moment|(U lamha)","دقيقة|minute|","مين معي؟|who is this?|Literally \"who is with me?\"","اللوكيشن|location pin|Used everywhere in Saudi","فويس|voice note|","دق علي|ring me|"],
+ph:["ألو، مين معي؟|Hello, who is this?|","لحظة، لو سمحت|One moment, please|","أرسل لي اللوكيشن|Send me the location|","أكلّمك بعد شوي|I'll call you in a bit|","ما ردّيت عليه|I didn't answer him|"]},
+{n:15,p:3,t:"Feelings and reactions",
+g:["Feelings take the doer form","These adjectives add ـة for a woman: زعلان / زعلانة, فرحان / فرحانة."],
+task:"Describe how your week went using three feeling words.",
+r:["ف ر ح|فرحان=happy;فرح=joy","ز ع ل|زعلان=upset;لا تزعل=don't be upset","خ و ف|خايف=scared (U khauf)","ق ل ق|قلقان=worried;قلق=worry"],
+w:["مبسوط|pleased, happy|","مستانس|enjoying myself|Saudi","طفشان|bored, fed up|Very Saudi","والله|really, I swear|Used constantly","صدق؟|really?|","ما شاء الله|how wonderful|(U)","يا سلام|wow|","يا ليت|I wish|"],
+ph:["أنا [مبسوط~مبسوطة] مرة اليوم|I'm very happy today|","لا تزعل، عادي|Don't be upset, it's fine|","والله؟ صدق؟|Really? Seriously?|","طفشت من الزحمة|I'm fed up with the traffic|"]},
+{n:16,p:3,t:"Weather and Gulf life",
+g:["Comparisons","The pattern أفعل makes \"more\". حار → أحر hotter · بارد → أبرد colder · زين → أحسن better · كثير → أكثر more · قليل → أقل less."],
+task:"Make small talk about the weather with two people.",
+r:["ح ر ر|حر=heat;حار=hot;حرارة=temperature","ب ر د|برد=cold;بارد=cold (thing)","م ط ر|مطر=rain;ممطر=rainy","غ ب ر|غبار=dust, dust storm"],
+w:["الجو|the weather|","شمس / سما|sun / sky|","صيف / شتا|summer / winter|","ربيع|spring|","البر|the desert, the outdoors|طلعة بر = a trip to the desert","كشتة|desert camping trip|Najdi word","رطوبة|humidity|"],
+ph:["الجو حار مرة اليوم|The weather is very hot today|","الشتا هنا أحسن من الصيف|Winter here is better than summer|","نطلع البر نهاية الأسبوع؟|Shall we go out to the desert at the weekend?|","فيه غبار اليوم|It's dusty today|"]},
+{n:17,p:3,t:"Linking ideas",
+g:["كان and conditions","كنت تعبان = I was tired. إذا + past verb for real conditions: إذا خلصت بدري، بكلّمك. لو + كان for unreal ones: لو عندي وقت، كان رحت."],
+task:"Explain one decision you made this week and why, in five linked sentences.",
+r:["س ب ب|سبب=reason (U sabab);بسبب=because of","ن ت ج|نتيجة=result (U natija)","ش ر ط|شرط=condition (U shart);بشرط=on condition","ف ر ق|فرق=difference (U farq);ما يفرق=it doesn't matter"],
+w:["عشان|because, so that|Saudi. MSA is لأن / لكي","لأن|because|","لكن / بس|but|","إذا|if (real)|","لو|if (unreal)|","عشان كذا|that's why|","مع إن|even though|","كان / كنت|was / I was|"],
+ph:["ما رحت عشان كنت [تعبان~تعبانة]|I didn't go because I was tired|","إذا خلصت بدري، بكلّمك|If I finish early, I'll call you|","ما يفرق معي|It doesn't matter to me|","مع إنه غالي، بس زين|Even though it's expensive, it's good|"]},
+{n:18,p:3,t:"Banks, paperwork and services",
+g:["Verb families","Doubling the middle letter often means \"make it happen\". جديد new → جدّد renewed. صالح valid → صلّح fixed. قريب near → قرّب brought closer."],
+task:"Handle one bank or service counter visit in Arabic.",
+r:["ح و ل|حوّل=transferred;تحويل=transfer;حوالة=remittance (U hawala)","ص ر ف|صرف=spent, exchanged;صرّاف=ATM;مصروف=expense (! Urdu masroof = busy)","ج د د|جدّد=renewed;تجديد=renewal;جديد=new","ق د م|قدّم=applied, submitted;تقديم=application"],
+w:["فلوس|money|","إقامة|residency permit|(U iqamat)","جواز|passport|","معاملة|transaction, paperwork|(U muamla = matter)","رسوم|fees|","نموذج|form|(! Urdu namoona = sample)","توقيع|signature|","نسخة|copy|(U nuskha)"],
+ph:["أبغى أحوّل فلوس {R}|I want to transfer money {RE}|","وين أقرب صرّاف؟|Where's the nearest ATM?|","أبغى أجدد الإقامة|I want to renew my iqama|","كم الرسوم؟ وين أوقّع؟|How much are the fees? Where do I sign?|"]},
+{n:19,p:4,t:"The office and meetings",
+g:["Noun + noun means \"of\"","Put two nouns side by side. مدير الشركة = the manager of the company. ملف العميل = the client's file. Only the last noun takes الـ."],
+task:"Open or close one internal meeting with a sentence in Arabic.",
+r:["ع م ل|عمل=work (U amal);عميل=client;عمليات=operations","د ي ر|مدير=manager (U);إدارة=department, management (U idara)","و ظ ف|موظف=employee (U);وظيفة=job (! Urdu wazifa = stipend);توظيف=hiring","ش ر ك|شركة=company;شريك=partner (U shareek);مشاركة=participation"],
+w:["اجتماع|meeting|","قسم|department, section|(! Urdu qism = type)","فريق|team|","زميل|colleague|","مهمة|task|","تقرير|report|(! Urdu taqreer = speech)","ملف|file|","متابعة|follow-up|","آخر المستجدات|latest updates|"],
+ph:["عندي اجتماع الساعة عشر|I have a meeting at ten|","مين المسؤول عن هذا الملف؟|Who is responsible for this file?|","أرسل لي التقرير، لو سمحت|Send me the report, please|","نتابع معك بكرة إن شاء الله|We'll follow up with you tomorrow, God willing|","وش آخر المستجدات؟|What are the latest updates?|"]},
+{n:20,p:4,t:"Finance and audit vocabulary",
+g:["Adjective after a noun + noun pair","The adjective goes at the end and agrees with the first noun. تقرير المراجعة النهائي = the final audit report."],
+task:"Read the headings of one Arabic set of financial statements and match each to its English line item.",
+r:["ر ج ع|مراجعة=audit, review;مراجع=auditor;مرجع=reference (U marja)","ح س ب|محاسبة=accounting;حسابات=accounts;كشف حساب=bank statement","م و ل|مال=money, capital (U maal);مالي=financial;تمويل=financing","ر ب ح|ربح=profit;أرباح=profits","خ س ر|خسارة=loss (U khasara)"],
+w:["القوائم المالية|financial statements|","قائمة المركز المالي|statement of financial position|","إيرادات / مصروفات|revenue / expenses|","أصول / التزامات|assets / liabilities|","حقوق الملكية|equity|","مخزون|inventory|","ذمم مدينة / ذمم دائنة|receivables / payables|","فاتورة / عقد|invoice / contract|(U aqd)","زكاة / ضريبة|zakat / tax|","إقرار|return, declaration|إقرار زكوي = zakat return","مخصص|provision|","إهلاك|depreciation|"],
+ph:["ممكن ترسل لي كشف الحساب؟|Could you send me the bank statement?|","نحتاج الفواتير الأصلية والعقود|We need the original invoices and the contracts|","متى تجهز القوائم المالية؟|When will the financial statements be ready?|","عندنا ملاحظات على المخصص|We have comments on the provision|"]},
+{n:21,p:4,t:"Formal requests and emails",
+g:["Spoken to formal swaps","أبغى → أرغب or نود · وش → ما · ليش → لماذا · الحين → الآن · عشان → لأن."],
+task:"Write a five-line formal request in Arabic and have a Saudi colleague check it.",
+r:["ر ج و|أرجو=I kindly ask;رجاء=request","ر ف ق|مرفق=attached;مرفقات=attachments","ف ي د|أفيدكم=I inform you;إفادة=certificate, statement;مفيد=useful (U mufeed)","و ف ق|وافق=agreed;موافقة=approval;توفيق=success (U taufeeq)"],
+w:[],
+ph:["السلام عليكم ورحمة الله وبركاته|Full formal greeting|","تحية طيبة وبعد|Standard opening line (Dear Sir/Madam)|","أرجو التكرم بـ ...|Kindly ...|","مرفق لكم ...|Attached please find ...|","نأمل تزويدنا بـ ...|We hope you can provide us with ...|","في أقرب وقت ممكن|As soon as possible|","شاكرين تعاونكم|Thank you for your cooperation|","مع خالص التحية|With best regards|","أرجو التكرم بإرسال كشف الحساب|Kindly send the bank statement|","مرفق لكم خطاب التأكيد|Attached please find the confirmation letter|"]},
+{n:22,p:4,t:"Bridge to MSA and reading news",
+g:["MSA negation","لا + present = does not. لم + present = did not (لم يذهب = he did not go). لن + present = will not."],
+task:"Read three headlines a day from an Arabic news site and translate them.",
+r:["ح ك م|حكومة=government (U hukumat);محكمة=court (U);حكم=ruling","و ز ر|وزير=minister (U wazir);وزارة=ministry","ق ر ر|قرار=decision (U qarar);قرر=decided","ن ظ م|نظام=system, regulation (U nizam);تنظيم=organisation"],
+w:["ماذا|what (MSA)|Saudi: وش","لماذا|why (MSA)|Saudi: ليش","أين|where (MSA)|Saudi: وين","الآن|now (MSA)|Saudi: الحين","أريد|I want (MSA)|Saudi: أبغى","جيد|good (MSA)|Saudi: زين","غدًا|tomorrow (MSA)|Saudi: بكرة","رأى|saw (MSA)|Saudi: شاف","جاء|came (MSA)|Saudi: جا","يوجد / لا يوجد|there is / isn't (MSA)|Saudi: فيه / ما فيه","ليس|not (MSA)|Saudi: مو","سوف|will (MSA)|Saudi: بـ"],
+ph:[]},
+{n:23,p:4,t:"Guessing words from patterns",
+g:["Patterns tell you the word type","Once you know a root, the pattern tells you what kind of word it is. This turns 1,000 words into several thousand you can recognise."],
+task:"Guess the meaning of ten new words this week from their pattern before checking.",
+r:["ع ل م|علم=knowledge (U);معلم=teacher (U);تعليم=education (U);معلومات=information (U)","خ د م|خدمة=service (U khidmat);استخدم=used;مستخدم=user","ق ب ل|قبل=accepted;استقبال=reception (U);مقابلة=interview (! Urdu muqabla = competition);مستقبل=future (U)","ش و ر|استشارة=consultation;مستشار=adviser (U mushir)"],
+w:["فاعل|pattern: the doer|كاتب writer, مراجع auditor","مفعول|pattern: the thing done to|مكتوب written, مفهوم understood","مَفعَل|pattern: the place|مكتب office, مدرسة school","مِفعال|pattern: the tool|مفتاح key","فعّل|pattern: to make happen|صلّح fixed, جدّد renewed","تفعيل|pattern: the act of doing|تصليح repair, تجديد renewal","استفعل|pattern: to seek, to use|استعمل used, استفسر enquired","مستفعِل|pattern: the one who seeks|مستخدم user, مستشار adviser"],
+ph:[]},
+{n:24,p:4,t:"Natural Saudi speech and storytelling",
+g:["Telling a story in order","أول شي first · بعدين then · وبعد كذا after that · وفي الأخير in the end."],
+task:"Tell the story of how you came to {CE} in three to five minutes.",
+r:[],
+w:["هلا والله|warm hello|","كفو|well done|Very Saudi praise","ترا|just so you know|ترا الاجتماع تأجل = FYI, the meeting moved","سالفة|story, matter|وش السالفة؟ = what's going on?","على راسي|with pleasure|Literally \"on my head\"","خلّنا|let's|خلّنا نروح = let's go","يلا|come on|","بعد|also, too|أنا بعد = me too","صبر|patience|(U sabr)","نصيحة|advice|(U nasihat)","أول شي|first|","وفي الأخير|in the end|"],
+ph:["وش السالفة؟|What's going on?|","كفو، ما قصّرت|Well done, thank you|","ترا بكرة إجازة|Just so you know, tomorrow is a holiday|","خلّنا نتقهوى|Let's have coffee|"]}
+];
+window.PHASES = {1:"Survival",2:"Building sentences",3:"Everyday fluency",4:"Work Arabic and MSA"};
+window.PACKS={
+finance:{t:"Finance and audit",w:["ميزانية|budget, balance sheet|","تدقيق|audit, checking|","تسوية|reconciliation|تسوية بنكية = bank reconciliation","رصيد|balance|","قيد|journal entry|","مدين / دائن|debit / credit|","فترة مالية|financial period|","إقفال|closing (of the books)|","عينة|sample|","أدلة|evidence|","جرد|stock count|","تأكيد|confirmation|","سيولة|liquidity|","مبدأ الاستمرارية|going concern|","ضريبة القيمة المضافة|VAT|"],
+ ph:["أبغى كشف التسوية البنكية|I want the bank reconciliation|","متى موعد الجرد؟|When is the stock count?|","نحتاج تأكيدات من البنوك|We need confirmations from the banks|","وش سبب هذا الفرق؟|What's the reason for this difference?|"]},
+health:{t:"Healthcare",w:["مريض|patient|","ممرض / ممرضة|nurse (m / f)|","وصفة|prescription|","جرعة|dose|","ألم|pain|","حساسية|allergy|","ضغط|blood pressure|","سكر|blood sugar, diabetes|","أشعة|X-ray|","تحليل|lab test|","طوارئ|emergency|","عملية|operation|","تنفس|breathing|","نبض|pulse|","ضماد|bandage|"],
+ ph:["وين يوجعك؟|Where does it hurt?|","عندك حساسية من شي؟|Are you allergic to anything?|","خذ الدوا مرتين في اليوم|Take the medicine twice a day|","لازم نسوي تحليل دم|We need to do a blood test|"]},
+eng:{t:"Engineering and construction",w:["مشروع|project|","موقع|site|","مهندس|engineer|","مقاول|contractor|","عامل|worker|","مخطط|drawing, plan|","خرسانة|concrete|","حديد|steel|","سلامة|safety|","خوذة|helmet|","تسليم|handover|","جدول زمني|schedule|","تكلفة|cost|","معدات|equipment|","صيانة|maintenance|"],
+ ph:["متى نسلم المشروع؟|When do we hand over the project?|","البس الخوذة في الموقع|Wear the helmet on site|","المقاول متأخر أسبوع|The contractor is a week behind|","أرسل لي آخر مخطط|Send me the latest drawing|"]},
+it:{t:"IT and tech",w:["برنامج|program, software|","تطبيق|app|","نظام|system|","شبكة|network|Also the card machine","كلمة المرور|password|","حساب|account|","تحديث|update|","خطأ|error|","بيانات|data|","سيرفر|server|","دعم فني|technical support|","جهاز|device|","طابعة|printer|","شاشة|screen|","تنزيل|download|"],
+ ph:["النظام واقف|The system is down|","نسيت كلمة المرور|I forgot the password|","فيه مشكلة في الشبكة|There's a problem with the network|","سوّ تحديث للتطبيق|Update the app|"]},
+edu:{t:"Teaching and schools",w:["مدرسة|school|","طالب / طالبة|student (m / f)|","معلم / معلمة|teacher (m / f)|","فصل|classroom, class|","واجب|homework|","اختبار|test, exam|","درجة|grade, mark|","جدول|timetable|","حصة|lesson period|","سبورة|board|","إدارة|administration|","ولي أمر|parent, guardian|","نجح|passed|","غياب|absence|","إجازة|holiday|"],
+ ph:["وين الواجب؟|Where's the homework?|","الاختبار يوم الأحد|The exam is on Sunday|","أبغى أكلم ولي الأمر|I want to speak to the parent|","افتحوا الكتاب صفحة عشرة|Open the book at page ten|"]},
+sales:{t:"Sales and customer service",w:["عميل / زبون|customer|","سعر|price|","عرض|offer, deal|","فاتورة|invoice, receipt|","استرجاع|refund, return|","استبدال|exchange|","ضمان|warranty|","مقاس|size|","لون|colour|","متوفر|available|","مخزون|stock|","توصيل|delivery|","طلب|order|","خدمة العملاء|customer service|","تخفيض|discount, sale|"],
+ ph:["وش أقدر أساعدك؟|How can I help you?|","هذا مو متوفر حاليًا|This isn't available at the moment|","ممكن أشوف الفاتورة؟|Can I see the receipt?|","فيه عرض اليوم|There's an offer today|"]},
+student:{t:"University life",w:["جامعة|university|","محاضرة|lecture|","دكتور|professor, doctor|","تخصص|major, specialisation|","بحث|research, paper|","مكتبة|library|","تسجيل|registration|","منحة|scholarship|","فصل دراسي|semester|","تخرج|graduation|","سكن|accommodation|","زميل|classmate, colleague|","مشروع تخرج|final project|","معدل|GPA, average|","شهادة|certificate, degree|"],
+ ph:["وين المحاضرة اليوم؟|Where's the lecture today?|","متى آخر يوم للتسجيل؟|When's the last day to register?|","تخصصي محاسبة|My major is accounting|","عندي اختبار بكرة|I have an exam tomorrow|"]}
+};
+
+</script>
+<script>
+// Line-art illustrations, viewBox 0 0 200 140. Classes: f = soft accent fill, a = accent stroke, g = gold stroke, nd = no draw animation.
+window.ILL={
+welcome:`<path class="f" d="M38 22h96a14 14 0 0 1 14 14v38a14 14 0 0 1-14 14H84l-22 18V88H38a14 14 0 0 1-14-14V36a14 14 0 0 1 14-14z"/><text x="86" y="66" font-size="34" text-anchor="middle">كلام</text><path class="a" d="M152 92a22 22 0 1 0 0.1 0"/><path d="M146 110q6 6 12 0"/><circle class="dot" cx="145" cy="100" r="2"/><circle class="dot" cx="159" cy="100" r="2"/><path class="g" d="M170 30l6-6M176 42h8M164 20v-8"/>`,
+done:`<path class="f" d="M70 30h60v26a30 30 0 0 1-60 0z"/><path d="M70 38H52a14 14 0 0 0 18 22M130 38h18a14 14 0 0 1-18 22"/><path d="M100 86v14M82 116h36l-4-16H86z"/><path class="a" d="M100 40l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/><path class="g" d="M40 24l4 4M160 24l-4 4M30 50h6M164 50h6"/>`,
+1:`<path d="M30 26h72a10 10 0 0 1 10 10v26a10 10 0 0 1-10 10H56L42 84V72H30a10 10 0 0 1-10-10V36a10 10 0 0 1 10-10z"/><text x="66" y="57" font-size="22" text-anchor="middle">سلام</text><path class="f" d="M102 66h66a10 10 0 0 1 10 10v24a10 10 0 0 1-10 10h-8v12l-14-12h-44a10 10 0 0 1-10-10V76a10 10 0 0 1 10-10z"/><text x="135" y="96" font-size="20" text-anchor="middle">أهلين</text><path class="g" d="M126 30l5-8M140 36l8-4M120 22l-1-9"/>`,
+2:`<path class="f" d="M62 54h70l8 66H54z"/><path d="M80 54V44a17 17 0 0 1 34 0v10"/><path d="M28 34l18-14h26v28H46z"/><circle cx="40" cy="34" r="3"/><text x="60" y="40" font-size="13" text-anchor="middle">٥٠</text><ellipse class="a" cx="164" cy="114" rx="16" ry="5"/><path class="a" d="M148 114v-8M180 114v-8"/><ellipse class="a" cx="164" cy="106" rx="16" ry="5"/><ellipse class="a" cx="164" cy="98" rx="16" ry="5"/><path d="M84 82q13 10 26 0"/>`,
+3:`<path d="M72 124l24-66M128 124l-24-66"/><path class="a nd" d="M100 120v-10M100 100v-8M100 84v-6M100 72v-4"/><path d="M162 124V48"/><path class="f" d="M138 30h36l10 10-10 10h-36z"/><text x="158" y="45" font-size="13" text-anchor="middle">يمين</text><path d="M20 108h50l-8-18H32z"/><circle cx="32" cy="110" r="6"/><circle cx="60" cy="110" r="6"/><circle class="g" cx="40" cy="34" r="12"/><path d="M14 124h172"/>`,
+4:`<path class="f" d="M72 120h44l-6-30q-4-14-16-14t-16 14z"/><path d="M86 76l2-14h12l2 14M86 62q8-10 16 0"/><path d="M76 94q-20-6-28-28"/><path d="M116 88q18 4 10 26"/><path class="a" d="M144 106h26l-4 16h-18z"/><path class="g" d="M152 98q-4-6 0-12t0-12M162 98q-4-6 0-12t0-12"/><path d="M14 124h172"/>`,
+5:`<circle class="f" cx="68" cy="72" r="38"/><path class="a" d="M68 72V48M68 72l18 9"/><path d="M68 38v5M68 101v5M34 72h5M97 72h5"/><rect x="120" y="42" width="58" height="64" rx="7"/><path d="M120 58h58M134 36v12M164 36v12"/><path d="M130 72h8M146 72h8M162 72h8M130 86h8M146 86h8"/><rect class="f" x="160" y="81" width="12" height="10" rx="2"/>`,
+6:`<circle cx="58" cy="50" r="13"/><path d="M36 122V96a22 22 0 0 1 44 0v26"/><circle cx="142" cy="50" r="13"/><path class="f" d="M120 122V96a22 22 0 0 1 44 0v26z"/><circle cx="100" cy="76" r="10"/><path d="M85 122v-16a15 15 0 0 1 30 0v16"/><path class="a" d="M100 50c-6-8-16-2-10 5l10 9 10-9c6-7-4-13-10-5z"/><path d="M14 124h172"/>`,
+7:`<path class="f" d="M28 46q36-12 72 0v70q-36-12-72 0z"/><path d="M100 46q36-12 72 0v70q-36-12-72 0z"/><path d="M114 62h44M114 74h44M114 86h30"/><path class="a" d="M40 66l6 6 10-12M40 90l6 6 10-12"/><path class="g" d="M150 110l30-50 6 4-30 50-8 4z"/>`,
+8:`<path class="f" d="M40 20h86a14 14 0 0 1 14 14v40a14 14 0 0 1-14 14H82l-22 18V88H40a14 14 0 0 1-14-14V34a14 14 0 0 1 14-14z"/><text x="83" y="72" font-size="48" text-anchor="middle">؟</text><path d="M142 84h30a8 8 0 0 1 8 8v16a8 8 0 0 1-8 8h-4v10l-10-10h-16a8 8 0 0 1-8-8V92a8 8 0 0 1 8-8z"/><text x="157" y="106" font-size="15" text-anchor="middle">لا</text>`,
+9:`<path class="a nd" stroke-dasharray="5 7" d="M24 112Q88 18 162 48"/><path class="f" d="M150 40l24 6-8 4 4 14-6-2-6-12-10 4-2-6 8-4z"/><rect x="26" y="88" width="40" height="30" rx="5"/><path d="M38 88v-6h16v6M26 100h40"/><path d="M14 124h172"/><circle class="g" cx="44" cy="30" r="10"/>`,
+10:`<path class="f" d="M100 112C60 86 44 66 52 48s30-18 48 0c18-18 40-18 48 0s-8 38-48 64z"/><path class="g" d="M30 30l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1zM170 22l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/><path class="a" d="M84 66q16 14 32 0"/>`,
+11:`<path d="M32 70l58-42 58 42"/><path class="f" d="M44 62v58h92V62"/><rect x="76" y="88" width="26" height="32" rx="2"/><rect x="52" y="74" width="18" height="16" rx="2"/><rect x="148" y="78" width="38" height="20" rx="4"/><path class="a" d="M154 88h26M156 106q4 6 0 12M168 106q4 6 0 12"/><path d="M14 124h172"/>`,
+12:`<circle class="f" cx="70" cy="66" r="38"/><path class="a" d="M62 46h16v12h12v16H78v12H62V74H50V58h12z"/><rect x="128" y="50" width="20" height="54" rx="10" transform="rotate(35 138 77)"/><path d="M132 69l14 20"/><path d="M168 40v52a8 8 0 1 1-8 0V40a4 4 0 0 1 8 0z"/><path class="g" d="M164 70v24"/>`,
+13:`<path d="M30 112h140"/><path d="M40 112q60 18 120 0"/><path class="f" d="M64 102h40l-5-24q-3-12-15-12t-15 12z"/><path d="M78 66l2-10h8l2 10M66 82q-16-4-22-20"/><path class="a" d="M126 92h18l-3 10h-12zM150 92h18l-3 10h-12z"/><path class="g" d="M131 86q-3-5 0-10M159 86q-3-5 0-10"/><ellipse cx="160" cy="70" rx="8" ry="5"/><ellipse cx="148" cy="64" rx="7" ry="4"/>`,
+14:`<rect class="f" x="70" y="20" width="56" height="104" rx="10"/><path d="M90 30h16M92 112h12"/><path class="a" d="M80 48h30a6 6 0 0 1 6 6v12a6 6 0 0 1-6 6h-18l-8 6v-6h-4"/><path d="M146 50a14 14 0 1 1 28 0c0 12-14 26-14 26s-14-14-14-26z"/><circle cx="160" cy="50" r="5"/><path class="g" d="M40 70q-10 10 0 20M30 62q-18 18 0 36"/>`,
+15:`<circle class="f" cx="46" cy="70" r="26"/><circle class="dot" cx="38" cy="64" r="2.5"/><circle class="dot" cx="54" cy="64" r="2.5"/><path class="a" d="M36 78q10 10 20 0"/><circle cx="100" cy="70" r="26"/><circle class="dot" cx="92" cy="64" r="2.5"/><circle class="dot" cx="108" cy="64" r="2.5"/><path d="M90 80h20"/><circle cx="154" cy="70" r="26"/><circle class="dot" cx="146" cy="64" r="2.5"/><circle class="dot" cx="162" cy="64" r="2.5"/><path d="M144 84q10-10 20 0"/>`,
+16:`<circle class="f" cx="150" cy="40" r="18"/><path class="g" d="M150 12v-6M178 40h6M170 20l4-4M130 20l-4-4"/><path d="M10 116q40-30 80-6t100-12"/><path class="a" d="M10 124q50-22 100-4t80-8"/><path d="M58 108V62"/><path d="M58 62q-14-8-26 0M58 62q14-8 26 0M58 62q-8-14-20-14M58 62q8-14 20-14"/>`,
+17:`<rect class="f" x="14" y="54" width="62" height="34" rx="17"/><rect x="124" y="54" width="62" height="34" rx="17"/><path class="a" d="M76 71h48"/><circle class="a" cx="76" cy="71" r="3"/><circle class="a" cx="124" cy="71" r="3"/><text x="100" y="62" font-size="15" text-anchor="middle">عشان</text><text x="45" y="77" font-size="13" text-anchor="middle">ما رحت</text><text x="155" y="77" font-size="13" text-anchor="middle">تعبان</text><path class="g" d="M60 110h80"/>`,
+18:`<path d="M34 54l66-30 66 30z"/><path d="M40 54h120M40 116h120M30 124h140"/><path d="M54 60v50M80 60v50M120 60v50M146 60v50"/><rect class="f" x="96" y="80" width="62" height="40" rx="6" transform="rotate(-8 127 100)"/><path class="a" d="M98 92l58-8M104 108l18-3"/>`,
+19:`<rect class="f" x="52" y="40" width="96" height="62" rx="6"/><path d="M38 108h124l-8 10H46z"/><path class="a" d="M66 58h40M66 70h66M66 82h52"/><path d="M162 92h18l-3 16h-12z"/><path class="g" d="M168 84q-3-5 0-10M174 84q-3-5 0-10"/><circle cx="34" cy="44" r="14"/><path d="M34 36v8l6 4"/>`,
+20:`<path d="M24 120h100"/><rect class="f" x="32" y="84" width="16" height="36"/><rect class="f" x="56" y="66" width="16" height="54"/><rect class="f" x="80" y="48" width="16" height="72"/><path class="a" d="M30 76l26-16 24-8 30-20"/><rect x="128" y="46" width="46" height="70" rx="6"/><rect x="136" y="54" width="30" height="14" rx="2"/><path d="M138 80h4M150 80h4M162 80h4M138 92h4M150 92h4M162 92h4M138 104h4M150 104h4M162 104h4"/>`,
+21:`<rect class="f" x="30" y="40" width="120" height="76" rx="6"/><path d="M30 46l60 40 60-40"/><circle class="a" cx="150" cy="104" r="16"/><path class="a" d="M142 104l6 6 10-12"/><path class="g" d="M160 30l24-20 4 4-24 20-6 2z"/>`,
+22:`<rect class="f" x="36" y="26" width="128" height="94" rx="4"/><path d="M36 26v94h-8a6 6 0 0 1-6-6V40"/><text x="100" y="52" font-size="20" text-anchor="middle">أخبار</text><path class="a" d="M48 62h104"/><path d="M48 76h48M48 86h48M48 96h48M48 106h36"/><rect x="106" y="74" width="46" height="34" rx="3"/><path d="M110 104l12-14 10 10 6-6 10 10"/>`,
+23:`<path class="f" d="M100 18c-28 0-44 18-40 38 4 18 24 22 40 22s36-4 40-22c4-20-12-38-40-38z"/><path d="M100 78v26"/><path class="a" d="M100 104q-24 0-40 18M100 104v18M100 104q24 0 40 18"/><text x="58" y="136" font-size="13" text-anchor="middle">ك</text><text x="100" y="136" font-size="13" text-anchor="middle">ت</text><text x="142" y="136" font-size="13" text-anchor="middle">ب</text>`,
+24:`<path class="f" d="M24 44q38-14 76 0v66q-38-14-76 0z"/><path d="M100 44q38-14 76 0v66q-38-14-76 0z"/><path class="g" d="M60 22l3 6 6 1-5 4 1 6-5-3-5 3 1-6-5-4 6-1zM140 18l2 5 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1z"/><path class="a" d="M114 64h48M114 76h48M114 88h32"/><path d="M38 64h48M38 76h40"/>`
+};
+// Lesson goal tags and a short "you'll be able to" line
+window.LMETA={
+1:{g:["daily","social"],can:"Greet people and introduce yourself"},
+2:{g:["daily"],can:"Ask prices and pay in shops"},
+3:{g:["daily"],can:"Give a driver directions"},
+4:{g:["daily","social"],can:"Order food and drinks your way"},
+5:{g:["daily","work"],can:"Tell the time and plan your day"},
+6:{g:["daily","social"],can:"Talk about your family"},
+7:{g:["daily","social"],can:"Say what you did"},
+8:{g:["daily","work"],can:"Ask questions and say no"},
+9:{g:["social","daily"],can:"Talk about plans and bookings"},
+10:{g:["social"],can:"Give opinions and preferences"},
+11:{g:["daily"],can:"Sort out problems at home"},
+12:{g:["daily"],can:"Get help at a pharmacy or clinic"},
+13:{g:["social","work"],can:"Use the polite phrases Saudis expect"},
+14:{g:["work","daily"],can:"Handle calls and voice notes"},
+15:{g:["social"],can:"Share how you feel"},
+16:{g:["social","daily"],can:"Make small talk about the weather"},
+17:{g:["work","reading"],can:"Explain reasons and conditions"},
+18:{g:["daily"],can:"Deal with banks and paperwork"},
+19:{g:["work"],can:"Get by in meetings and the office"},
+20:{g:["work","reading"],can:"Use finance and audit terms"},
+21:{g:["work","reading"],can:"Write a polite formal request"},
+22:{g:["reading"],can:"Read headlines and formal Arabic"},
+23:{g:["reading"],can:"Guess new words from their pattern"},
+24:{g:["social"],can:"Tell a story like a local"}
+};
+
+</script>
+<script>
+(function(){
+"use strict";
+const BUILD=window.KALAM_BUILD||"artifact";
+// ---------- icons ----------
+const I={
+ home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg>',
+ book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 5h6a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H3z"/><path d="M21 5h-6a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H21z"/></svg>',
+ target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>',
+ tree:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="12" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v9M12 12l-7 4.5M12 12l7 4.5"/></svg>',
+ user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+ spk:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+ mic:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>',
+ search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg>',
+ cards:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="6" y="3" width="13" height="16" rx="2"/><path d="M4 7v12a2 2 0 0 0 2 2h10"/></svg>',
+ quiz:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><circle cx="12" cy="17" r=".8" fill="currentColor"/></svg>',
+ ear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 9a5 5 0 0 1 10 0c0 3-3 4-3 7a3 3 0 0 1-5.5 1.6"/><path d="M10 9a2 2 0 0 1 4 0"/></svg>',
+ rec:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="7"/></svg>',
+ play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+ chevl:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>',
+ chevr:'<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg>',
+ bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>',
+ brief:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg>',
+ pen:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/></svg>',
+ plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
+ gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>',
+ palette:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.5-1-2.5S14 15 15 15h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1.2" fill="currentColor"/><circle cx="11" cy="7" r="1.2" fill="currentColor"/><circle cx="16" cy="8.5" r="1.2" fill="currentColor"/></svg>',
+ save:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 19h16"/></svg>',
+ phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>',
+ table:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg>',
+ trash:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>',
+ flame:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3c1 4 6 6 6 11a6 6 0 0 1-12 0c0-3 2-4 2-7 2 1 3 2 4 4 1-2 0-5 0-8z"/></svg>',
+ logo:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4 3v-3H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M8 11.5h6" stroke-linecap="round"/><circle cx="16" cy="11.5" r="1.2" fill="#fff" stroke="none"/></svg>'
+};
+document.getElementById("mark1").innerHTML=I.logo;
+
+// ---------- profile option lists ----------
+const ORIGINS=[["PK","Pakistan","باكستان"],["IN","India","الهند"],["BD","Bangladesh","بنغلاديش"],["EG","Egypt","مصر"],["PH","the Philippines","الفلبين"],["ID","Indonesia","إندونيسيا"],["NP","Nepal","نيبال"],["LK","Sri Lanka","سريلانكا"],["SD","Sudan","السودان"],["JO","Jordan","الأردن"],["SY","Syria","سوريا"],["YE","Yemen","اليمن"],["TR","Turkey","تركيا"],["NG","Nigeria","نيجيريا"],["GB","the UK","بريطانيا"],["US","the US","أمريكا"],["SA","Saudi Arabia","السعودية"],["XX","Somewhere else",""]];
+const CITIES=[["RUH","Riyadh","الرياض"],["JED","Jeddah","جدة"],["DMM","Dammam","الدمام"],["KHB","Khobar","الخبر"],["MKK","Makkah","مكة"],["MED","Madinah","المدينة"],["AHB","Abha","أبها"],["TUU","Tabuk","تبوك"],["DXB","Dubai","دبي"],["AUH","Abu Dhabi","أبوظبي"],["DOH","Doha","الدوحة"],["KWI","Kuwait","الكويت"],["MCT","Muscat","مسقط"],["BAH","Manama","المنامة"],["XX","Another city",""],["OUT","I don't live in the Gulf",""]];
+const FIELDS=[["finance","Finance and audit","أشتغل في المحاسبة والمراجعة","I work in accounting and audit"],["health","Healthcare","أشتغل في المجال الصحي","I work in healthcare"],["eng","Engineering and construction","أشتغل في الهندسة","I work in engineering"],["it","IT and tech","أشتغل في التقنية","I work in tech"],["edu","Teaching","أشتغل في التعليم","I work in education"],["sales","Sales and service","أشتغل في المبيعات","I work in sales"],["office","Office and business","أشتغل في شركة","I work at a company"],["student","Student","أنا [طالب~طالبة] في الجامعة","I'm a university student"],["other","Something else","",""]];
+const GOALS=[["daily","Daily life and errands"],["work","Work and colleagues"],["social","Making friends and small talk"],["reading","Reading and formal Arabic"]];
+const LEVELS=[[1,"I can read Arabic but know few meanings","Start at lesson 1"],[7,"I know everyday basics","Start at lesson 7"],[13,"I can hold simple conversations","Start at lesson 13"]];
+const MINS=[[5,"5 min","Light",5],[10,"10 min","Steady",10],[20,"20 min","Serious",15],[30,"30 min","Intense",25]];
+const ACCENTS={sadu:["Sadu","#a3262e","#e0585f"],oasis:["Oasis","#0f766e","#3cc4b4"],dune:["Dune","#b45309","#f0a24a"],majlis:["Majlis","#4338ca","#a5adff"]};
+const PHASES={1:"Survival",2:"Building sentences",3:"Everyday fluency",4:"Work and formal Arabic"};
+
+// ---------- state ----------
+const KEY="kalam-v2",OLD="riyadh-arabic-v1";
+const today0=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");};
+function fresh(){return {app:"kalam",v:2,t:0,
+  profile:{done:false,name:"",nameAr:"",gender:"m",origin:"PK",originAr:"",city:"RUH",cityAr:"",field:"office",goals:["daily","work"],level:1,mins:10,days:5,accent:"sadu",appearance:"system",joined:""},
+  cur:1,newPerDay:10,rate:.85,voice:"",autoplay:true,quick:false,
+  cards:{},days:{},newDay:{d:"",n:0},tasks:{},speak:{},miss:{},done:{},mine:[],packOn:true,best:0,stat:{q:0,c:0},dismiss:{}};}
+function migrate(o){const s=fresh();if(!o||typeof o!=="object")return s;
+  if(o.app==="kalam"){const m=Object.assign(s,o);m.profile=Object.assign(fresh().profile,o.profile||{});m.stat=Object.assign({q:0,c:0},o.stat||{});return m;}
+  ["cards","days","miss","speak","tasks","cur","newPerDay","rate","voice","autoplay"].forEach(k=>{if(o[k]!==undefined)s[k]=o[k];});s.migrated=true;return s;}
+let S=fresh();
+try{const raw=localStorage.getItem(KEY);if(raw)S=migrate(JSON.parse(raw));else{const old=localStorage.getItem(OLD);if(old)S=migrate(JSON.parse(old));}}catch(e){}
+let dbRef=null,syncState=BUILD==="web"?"Saved on this device":"Saved on this device",saveTimer=null,writing=false,pending=false;
+function persist(){S.t=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}if(dbRef){clearTimeout(saveTimer);saveTimer=setTimeout(pushDb,1500);}}
+async function pushDb(){if(!dbRef)return;if(writing){pending=true;return;}writing=true;
+  try{await dbRef.set({state:JSON.stringify(S),t:S.t});syncState="Synced to your Claude account";}catch(e){syncState="Sync paused, saved on this device";}
+  writing=false;if(pending){pending=false;pushDb();}}
+if(BUILD==="artifact")(async function(){
+  try{if(!window.claude||!claude.use)return;const [db,user]=await Promise.all([claude.use("db"),claude.use("user")]);
+    if(!db||!user)return;const id=await user.id();if(!id)return;
+    dbRef=db.collection("data/users/"+id).doc("progress");const snap=await dbRef.get();
+    if(snap.exists){const d=snap.data();if(d&&d.t>(S.t||0)){try{S=migrate(JSON.parse(d.state));localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}applyLook();buildItems();render();}}
+    else if(S.t)pushDb();syncState="Synced to your Claude account";
+  }catch(e){}})();
+
+// ---------- personalisation ----------
+const P=()=>S.profile;
+const findO=c=>ORIGINS.find(o=>o[0]===c)||ORIGINS[0];
+const findC=c=>CITIES.find(o=>o[0]===c)||CITIES[0];
+function pinfo(){const p=P();const o=findO(p.origin),c=findC(p.city);
+  const oAr=p.origin==="XX"?(p.originAr||""):o[2],oEn=p.origin==="XX"?"my country":o[1];
+  const hasCity=p.city!=="OUT"&&!(p.city==="XX"&&!p.cityAr);
+  const cAr=p.city==="XX"?p.cityAr:c[2],cEn=p.city==="XX"?"my city":p.city==="OUT"?"here":c[1];
+  const sa=p.origin==="SA";
+  return {name:p.name||"friend",nameAr:p.nameAr||p.name||"",oAr,oEn,cAr,cEn,hasCity,
+    tAr:sa?"دبي":(oAr||"برا"),tEn:sa?"Dubai":(oAr?oEn:"abroad"),rAr:sa?"لأهلي":(oAr||"لأهلي"),rEn:sa?"to my family":(oAr?"to "+oEn:"to my family")};}
+function res(s){if(!s)return s;const p=pinfo(),f=P().gender==="f";
+  if(!p.hasCity){s=s.replace(/،\s*\[[^\]]*\]\s*في \{C\}/,"").replace(/, I live in \{CE\}/,"");}
+  if(!p.oAr){s=s.replace(/أنا من \{O\}/,"أنا مو من هنا").replace(/I'm from \{OE\}/,"I'm not from here");}
+  return s.replace(/\[([^\]~]*)~([^\]]*)\]/g,(m,a,b)=>f?b:a)
+   .replace(/\{N\}/g,p.nameAr).replace(/\{NE\}/g,p.name).replace(/\{OE\}/g,p.oEn).replace(/\{O\}/g,p.oAr)
+   .replace(/\{CE\}/g,p.cEn).replace(/\{C\}/g,p.cAr).replace(/\{TE\}/g,p.tEn).replace(/\{T\}/g,p.tAr).replace(/\{RE\}/g,p.rEn).replace(/\{R\}/g,p.rAr);}
+const praise=()=>P().gender==="f"?"أحسنتِ":"أحسنت";
+function introLines(){const p=pinfo(),pr=P();const L=[];
+  L.push(["السلام عليكم، اسمي {N}","Hello, my name is {NE}"]);
+  if(p.oAr)L.push(["أنا من {O}","I'm from {OE}"]);
+  if(p.hasCity)L.push(["[ساكن~ساكنة] في {C}","I live in {CE}"]);
+  const fl=FIELDS.find(f=>f[0]===pr.field);if(fl&&fl[2])L.push([fl[2],fl[3]]);
+  L.push(["أتعلم العربي شوي شوي","I'm learning Arabic little by little"]);
+  L.push(["تشرفنا","Nice to meet you"]);
+  return L.map(([a,e],i)=>({id:"I"+i,ar:res(a),en:res(e),note:"",root:"",kind:"phrase",lesson:0,src:"intro"}));}
+const PACKMAP={finance:"finance",health:"health",eng:"eng",it:"it",edu:"edu",sales:"sales",student:"student"};
+const myPack=()=>PACKMAP[P().field]||null;
+
+// ---------- items ----------
+let ITEMS=[],BYID={},LESSON_ITEMS={},ROOTS={},PACK_ITEMS=[],MINE_ITEMS=[],INTRO_ITEMS=[];
+function flags(t){return {u:/\(U\b/.test(t),ff:/\(!/.test(t)};}
+function buildItems(){ITEMS=[];BYID={};LESSON_ITEMS={};ROOTS={};
+  for(const L of COURSE){const arr=[];
+    L.r.forEach((rs,ri)=>{const [root,list]=rs.split("|");list.split(";").forEach((pair,wi)=>{const k=pair.indexOf("=");arr.push({id:`L${L.n}r${ri}w${wi}`,ar:pair.slice(0,k).trim(),en:pair.slice(k+1).trim(),note:"",root,kind:"word",lesson:L.n});});});
+    L.w.forEach((s,i)=>{const [ar,en,note]=s.split("|");arr.push({id:`L${L.n}w${i}`,ar,en,note:note||"",root:"",kind:"word",lesson:L.n});});
+    L.ph.forEach((s,i)=>{const [ar,en,note]=s.split("|");arr.push({id:`L${L.n}p${i}`,ar:res(ar),en:res(en),note:note||"",root:"",kind:"phrase",lesson:L.n});});
+    arr.forEach(it=>{Object.assign(it,flags(it.en+" "+it.note));it.g=/ق/.test(it.ar)&&![20,21,22,23].includes(L.n);it.src="lesson";ITEMS.push(it);});
+    LESSON_ITEMS[L.n]=arr;}
+  ITEMS.forEach(it=>{if(!it.root)return;const k=it.root.replace(/\s/g,"");(ROOTS[k]=ROOTS[k]||{root:it.root,items:[]}).items.push(it);});
+  PACK_ITEMS=[];const pk=myPack();
+  if(pk){const pd=PACKS[pk];pd.w.forEach((s,i)=>{const [ar,en,note]=s.split("|");PACK_ITEMS.push({id:`P${pk}w${i}`,ar,en,note:note||"",root:"",kind:"word",lesson:0,src:"pack"});});
+    pd.ph.forEach((s,i)=>{const [ar,en,note]=s.split("|");PACK_ITEMS.push({id:`P${pk}p${i}`,ar,en,note:note||"",root:"",kind:"phrase",lesson:0,src:"pack"});});}
+  MINE_ITEMS=(S.mine||[]).map(m=>({id:m.id,ar:m.ar,en:m.en,note:m.note||"",root:"",kind:/\s/.test(m.ar.trim())?"phrase":"word",lesson:0,src:"mine"}));
+  INTRO_ITEMS=introLines();
+  [...PACK_ITEMS,...MINE_ITEMS,...INTRO_ITEMS].forEach(it=>{Object.assign(it,flags(it.en+" "+it.note),{g:false});ITEMS.push(it);});
+  ITEMS.forEach(it=>BYID[it.id]=it);}
+
+// ---------- dates + SRS ----------
+const pad=n=>String(n).padStart(2,"0");
+function dstr(off=0){const d=new Date();d.setDate(d.getDate()+off);return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+function dnum(s){const [y,m,d]=s.split("-").map(Number);return Math.round(Date.UTC(y,m-1,d)/864e5);}
+const TODAY=()=>dnum(dstr());
+function bump(n=1){const t=dstr();S.days[t]=(S.days[t]||0)+n;const st=streak();if(st>(S.best||0))S.best=st;}
+function streak(){let n=0,off=0;if(!S.days[dstr()])off=-1;while(S.days[dstr(off)]){n++;off--;}return n;}
+function weekDays(){const d=new Date().getDay();let n=0;for(let i=0;i<=d;i++)if(S.days[dstr(-i)])n++;return n;}
+const isNew=id=>!S.cards[id];
+function eligible(){const ok=it=>it.src==="lesson"?(S.done[it.lesson]||it.lesson===S.cur):it.src==="mine"||it.src==="intro"||(it.src==="pack"&&S.packOn);
+  return ITEMS.filter(ok);}
+function dueList(){const t=TODAY();return ITEMS.filter(it=>S.cards[it.id]&&S.cards[it.id].d<=t);}
+function newLeft(){if(S.newDay.d!==dstr())S.newDay={d:dstr(),n:0};return Math.max(0,S.newPerDay-S.newDay.n);}
+function newList(){return eligible().filter(it=>isNew(it.id));}
+function reviewCount(){return dueList().length+Math.min(newLeft(),newList().length);}
+function grade(id,g){let c=S.cards[id];
+  if(!c){c={i:0,e:2.5,r:0,l:0,d:TODAY()};if(S.newDay.d!==dstr())S.newDay={d:dstr(),n:0};S.newDay.n++;}
+  if(g===0){c.l++;c.i=0;c.e=Math.max(1.3,c.e-.2);c.d=TODAY();}
+  else{if(g===1){c.i=Math.max(1,Math.round((c.i||1)*1.2));c.e=Math.max(1.3,c.e-.15);}
+    else if(g===2)c.i=c.r===0?1:c.r===1?3:Math.round(Math.max(1,c.i)*c.e);
+    else{c.i=c.r===0?3:Math.round(Math.max(1,c.i)*c.e*1.3);c.e+=.15;}
+    c.r++;c.d=TODAY()+c.i;}
+  S.cards[id]=c;bump();persist();}
+function nextLabel(id,g){const c=S.cards[id]||{i:0,e:2.5,r:0};let i;
+  if(g===1)i=Math.max(1,Math.round((c.i||1)*1.2));else if(g===2)i=c.r===0?1:c.r===1?3:Math.round(Math.max(1,c.i)*c.e);else i=c.r===0?3:Math.round(Math.max(1,c.i)*c.e*1.3);
+  return i<30?i+"d":Math.round(i/30)+"mo";}
+const misses=id=>(S.cards[id]?.l||0)+(S.miss[id]||0);
+function weak(){return ITEMS.filter(it=>misses(it.id)>=2).sort((a,b)=>misses(b.id)-misses(a.id));}
+const learned=()=>Object.values(S.cards).filter(c=>c.r>0).length;
+const mastered=()=>Object.values(S.cards).filter(c=>c.i>=21).length;
+function lessonPct(n){const a=LESSON_ITEMS[n];return a&&a.length?Math.round(100*a.filter(it=>S.cards[it.id]&&S.cards[it.id].r>0).length/a.length):0;}
+const forYou=n=>(LMETA[n].g||[]).some(g=>P().goals.includes(g));
+function nextLesson(){if(!S.done[S.cur])return S.cur;for(let n=S.cur+1;n<=24;n++)if(!S.done[n])return n;for(let n=1;n<=24;n++)if(!S.done[n])return n;return S.cur;}
+function suggestAfter(n){for(let k=n+1;k<=24;k++)if(!S.done[k])return k;for(let k=1;k<=24;k++)if(!S.done[k])return k;return null;}
+
+// ---------- speech out ----------
+let voices=[],allVoices=0,curU=null,diag="Not tested yet";
+function loadVoices(){try{const all=speechSynthesis.getVoices();allVoices=all.length;voices=all.filter(v=>/^ar/i.test(v.lang)||/arab/i.test(v.name));}catch(e){voices=[];}}
+if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=()=>{loadVoices();if(view.name==="settings")render();};
+  let tries=0;const poll=setInterval(()=>{loadVoices();if(voices.length||++tries>12)clearInterval(poll);},500);}
+function pickVoice(){if(!voices.length)return null;return voices.find(v=>v.name===S.voice)||voices.find(v=>/SA/i.test(v.lang))||voices[0];}
+function clean(t){return t.replace(/\.\.\./g," ").replace(/ـ/g,"").replace(/\s*\/\s*/g,"، ").replace(/[A-Za-z]+/g,"").trim();}
+let lastBtn=null;
+function say(text,rate,btn,onend){
+  if(!("speechSynthesis" in window)){diag="This browser has no speech output";toast("This browser can't play speech.");return;}
+  try{const ss=speechSynthesis;const busy=ss.speaking||ss.pending;if(busy)ss.cancel();
+    if(lastBtn)lastBtn.classList.remove("playing");lastBtn=btn||null;if(btn)btn.classList.add("playing");
+    const u=new SpeechSynthesisUtterance(clean(text));curU=u;const v=pickVoice();
+    if(v){u.voice=v;u.lang=v.lang;}else u.lang="ar-SA";u.rate=rate||S.rate;u.volume=1;let started=false;
+    u.onstart=()=>{started=true;diag="Playing with "+(v?v.name:"the default voice");};
+    u.onend=()=>{if(btn)btn.classList.remove("playing");if(started)diag="Played OK with "+(v?v.name:"the default voice");if(onend)onend();};
+    u.onerror=e=>{if(btn)btn.classList.remove("playing");diag="Error: "+(e.error||"unknown");if(e.error!=="interrupted"&&e.error!=="canceled")toast("Speech error: "+(e.error||"unknown")+". See You › Settings › Speech.");};
+    const go=()=>{try{ss.resume();ss.speak(u);}catch(err){diag="Error: "+err.message;}};
+    if(busy)setTimeout(go,150);else go();
+    setTimeout(()=>{if(!started&&curU===u){if(btn)btn.classList.remove("playing");loadVoices();diag=voices.length?"Did not start. Check media volume.":"Did not start. No Arabic voice installed.";
+      toast(voices.length?"No sound. Turn up media volume and try again.":"No Arabic voice on this device. See You › Settings › Speech.");}},2500);
+  }catch(e){diag="Error: "+e.message;toast("Speech playback failed.");}}
+function sayList(list,i=0){if(i>=list.length)return;say(list[i],null,null,()=>setTimeout(()=>sayList(list,i+1),350));}
+
+// ---------- speech in ----------
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+let micBlocked=BUILD==="artifact";
+function norm(s){return s.replace(/[\u064B-\u0652\u0670\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/ؤ/g,"و").replace(/ئ/g,"ي").replace(/[^\u0621-\u064A\s]/g," ").replace(/\s+/g," ").trim();}
+function lev(a,b){const m=a.length,n=b.length;if(!m)return n;if(!n)return m;let p=Array.from({length:n+1},(_,j)=>j);for(let i=1;i<=m;i++){const c=[i];for(let j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c;}return p[n];}
+function score(target,heard){const tA=target.split(/\s*\/\s*|،\s*/).map(norm).filter(Boolean).concat([norm(target)]);let best=0;
+  for(const h of heard){const hs=norm(h).replace(/ /g,"");for(const t of tA){const ts=t.replace(/ /g,"");if(!ts)continue;if(hs.includes(ts)){best=1;break;}best=Math.max(best,1-lev(ts,hs)/Math.max(ts.length,hs.length));}}return best;}
+function listen(done){if(!SR){done({err:"unsupported"});return null;}let rec;try{rec=new SR();}catch(e){done({err:"unsupported"});return null;}
+  rec.lang="ar-SA";rec.interimResults=false;rec.maxAlternatives=5;let got=false;
+  rec.onresult=e=>{got=true;const a=[];for(const x of e.results[0])a.push(x.transcript);done({alts:a});};
+  rec.onerror=e=>{got=true;if(["not-allowed","service-not-allowed","audio-capture"].includes(e.error))micBlocked=true;done({err:e.error});};
+  rec.onend=()=>{if(!got)done({err:"no-speech"});};
+  try{rec.start();}catch(e){micBlocked=true;done({err:"not-allowed"});}return rec;}
+
+// ---------- utils ----------
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function arHTML(s){return esc(s).replace(/([\u0600-\u06FF][\u0600-\u06FF\u064B-\u0652\s،؟\/\.]*[\u0600-\u06FF؟]|[\u0600-\u06FF])/g,'<span class="ar">$1</span>');}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+let toastT;function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,2800);}
+function buzz(ms){try{navigator.vibrate&&navigator.vibrate(ms);}catch(e){}}
+let wl=null;async function wake(on){try{if(on&&!wl&&navigator.wakeLock){wl=await navigator.wakeLock.request("screen");wl.addEventListener("release",()=>wl=null);}else if(!on&&wl){wl.release();wl=null;}}catch(e){wl=null;}}
+function ill(key,cls=""){const src=ILL[key]||ILL.welcome;let i=0;
+  const body=src.replace(/<(path|circle|rect|line|ellipse|polyline)\b/g,(m,t)=>`<${t} pathLength="1" style="--i:${i++}"`);
+  return `<svg class="ill ${cls}" viewBox="0 0 200 140" aria-hidden="true">${body}</svg>`;}
+function chips(it){let h="";if(it.lesson)h+=`<span class="chip">L${it.lesson}</span>`;if(it.src==="pack")h+=`<span class="chip ind">Work pack</span>`;if(it.src==="mine")h+=`<span class="chip gold">My word</span>`;if(it.src==="intro")h+=`<span class="chip acc">About you</span>`;
+  if(it.root)h+=`<span class="chip acc"><span class="ar">${esc(it.root)}</span></span>`;
+  if(it.u&&showCog())h+=`<span class="chip good">Urdu cognate</span>`;if(it.ff&&showCog())h+=`<span class="chip warn">False friend</span>`;if(it.g)h+=`<span class="chip gold">ق said "g"</span>`;return h;}
+const showCog=()=>["PK","IN","BD"].includes(P().origin);
+function enText(it){let e=it.en;if(!showCog())e=e.replace(/\s*\((U|!)[^)]*\)/g,"");return e;}
+function noteText(it){let n=it.note;if(!showCog())n=n.replace(/^\((U|!)[^)]*\)$/,"").replace(/\s*\((U|!)[^)]*\)/g,"");return n;}
+function itemRow(it,extra=""){const n=noteText(it);return `<div class="item"><div class="txt">${extra}<span class="ar">${esc(it.ar)}</span><span class="en">${arHTML(enText(it))}</span>${n?`<span class="note">${arHTML(n)}</span>`:""}</div><button class="spk" data-say="${esc(it.ar)}" aria-label="Play ${esc(enText(it))}">${I.spk}</button></div>`;}
+function initials(){const n=(P().name||"?").trim();return esc(n.split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase()||"?");}
+function greeting(){const h=new Date().getHours();return h<12?["صباح الخير","Good morning"]:h<17?["مساء الخير","Good afternoon"]:["مساء الخير","Good evening"];}
+
+// ---------- look ----------
+function applyLook(){const a=ACCENTS[P().accent]||ACCENTS.sadu;const r=document.documentElement;r.style.setProperty("--acc-l",a[1]);r.style.setProperty("--acc-d",a[2]);
+  const ap=P().appearance;if(ap==="light"||ap==="dark")r.setAttribute("data-theme",ap);else if(BUILD==="web")r.removeAttribute("data-theme");
+  const m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",a[1]);}
+
+// ---------- router ----------
+let view={name:"home"},session=null,pScope="cur",confirmBox=null,onbStep=0,draft=null;
+const TABS=[["home","Home",I.home],["lessons","Lessons",I.book],["practice","Practice",I.target],["roots","Roots",I.tree],["you","You",I.user]];
+const TABOF={home:"home",lessons:"lessons",lesson:"lessons",practice:"practice",roots:"roots",root:"roots",you:"you",profile:"you",settings:"you",backup:"you",mine:"you",intro:"you",pack:"you",grammar:"you",search:"home",weak:"home"};
+function go(name,extra){stopAll();confirmBox=null;view=Object.assign({name},extra||{});render();window.scrollTo(0,0);}
+function stopAll(){try{speechSynthesis.cancel();}catch(e){}if(session&&session.rec){try{session.rec.abort();}catch(e){}}}
+function renderTabs(){const t=view.tab||TABOF[view.name]||"home";
+  $("#tabs").innerHTML=`<div class="navbrand brand"><span class="mark">${I.logo}</span><span class="word"><b>Kalam</b><span>كلام</span></span></div>`+TABS.map(([k,l,ic])=>`<button data-tab="${k}" ${t===k?'aria-current="page"':""}>${ic}<span>${l}</span></button>`).join("");}
+const VIEWS={};
+function render(){
+  if(!P().done&&view.name!=="restore"){view={name:"onboard"};}
+  const m=$("#main");const f=VIEWS[view.name]||VIEWS.home;
+  m.style.animation="none";void m.offsetWidth;m.style.animation="";
+  m.innerHTML=f();renderTabs();
+  $("#avatarBtn").innerHTML=initials();
+  const sess=["cards","quiz","listen","speak","flow"].includes(view.name);
+  document.body.classList.toggle("session",sess);document.body.classList.toggle("onboarding",view.name==="onboard"||view.name==="restore");
+  wake(sess);if(view.after){const a=view.after;view.after=null;a();}
+}
+$("#searchBtn").innerHTML=I.search;
+$("#searchBtn").onclick=()=>go("search");$("#avatarBtn").onclick=()=>go("you");
+
+// ================= ONBOARDING =================
+function onbDots(n,t){return `<div class="dots" aria-hidden="true">${Array.from({length:t},(_,i)=>`<i class="${i<=n?"on":""}"></i>`).join("")}</div>`;}
+const ONB=["welcome","name","gender","place","field","goals","level","time","look","plan"];
+VIEWS.onboard=function(){
+  if(!draft)draft=JSON.parse(JSON.stringify(P()));const d=draft;const st=ONB[onbStep];const tot=ONB.length;
+  const nav=(label="Continue",dis=false)=>`<div class="foot" style="position:static"><button class="btn primary block" data-act="onbnext" ${dis?"disabled":""}>${label}</button>${onbStep>0?`<button class="btn ghost block" data-act="onbback">Back</button>`:""}</div>`;
+  if(st==="welcome")return `<div class="onb"><div class="hero-l" style="background:transparent">${ill("welcome","anim float")}</div>
+   <div class="stack" style="text-align:center;align-items:center"><span class="mark" style="width:56px;height:56px;border-radius:16px">${I.logo}</span><h1 style="font-size:2rem">Kalam <span class="ar" style="color:var(--accent)">كلام</span></h1>
+   <p class="muted" style="max-width:34ch">Spoken Saudi Arabic, built around you. Two minutes of questions and every lesson, phrase and review fits your life.</p></div>
+   <div class="foot" style="position:static"><button class="btn primary block" data-act="onbnext">Set up my profile</button><button class="btn ghost block" data-go="restore">I have a backup to restore</button></div>
+   <p class="tiny muted" style="text-align:center">Your profile stays ${BUILD==="artifact"?"in your private Claude storage":"on this device"}. Nothing is sent anywhere else.</p></div>`;
+  let q="",body="",ok=true;
+  if(st==="name"){q=`<h1>What should we call you?</h1><p>Your name appears in greetings and in the phrases you practise.</p>`;
+    body=`<label class="field"><span>Your name</span><input type="text" id="o_name" autocomplete="given-name" value="${esc(d.name)}" placeholder="e.g. Arslan" maxlength="40"></label>
+    <label class="field"><span>Your name in Arabic script <span class="muted">(optional)</span></span><input type="text" class="ar" id="o_nameAr" dir="rtl" value="${esc(d.nameAr)}" placeholder="أرسلان" maxlength="40"></label>
+    <div class="preview"><span class="tiny muted">You'll practise saying</span><span class="ar" id="o_prev">اسمي ${esc(d.nameAr||d.name||"...")}</span></div>`;ok=!!d.name.trim();}
+  if(st==="gender"){q=`<h1>How should phrases describe you?</h1><p>In Arabic, words like "happy" or "busy" change for men and women. We'll use the right form when you talk about yourself.</p>`;
+    body=`<div class="choices two"><button class="choice" data-pick-g="m" aria-pressed="${d.gender==="m"}"><b>As a man</b><span class="ar">أنا مبسوط</span></button><button class="choice" data-pick-g="f" aria-pressed="${d.gender==="f"}"><b>As a woman</b><span class="ar">أنا مبسوطة</span></button></div>`;}
+  if(st==="place"){const s=pick=>pick;q=`<h1>Where are you from, and where do you live?</h1><p>These go into your introduction and phrases like "I'm travelling home next month".</p>`;
+    body=`<label class="field"><span>I'm from</span><select id="o_origin">${ORIGINS.map(o=>`<option value="${o[0]}" ${d.origin===o[0]?"selected":""}>${esc(o[1].replace(/^the /,"The "))}</option>`).join("")}</select></label>
+    ${d.origin==="XX"?`<label class="field"><span>Country name in Arabic <span class="muted">(optional)</span></span><input type="text" class="ar" dir="rtl" id="o_originAr" value="${esc(d.originAr)}"></label>`:""}
+    <label class="field"><span>I live in</span><select id="o_city">${CITIES.map(o=>`<option value="${o[0]}" ${d.city===o[0]?"selected":""}>${esc(o[1])}</option>`).join("")}</select></label>
+    ${d.city==="XX"?`<label class="field"><span>City name in Arabic <span class="muted">(optional)</span></span><input type="text" class="ar" dir="rtl" id="o_cityAr" value="${esc(d.cityAr)}"></label>`:""}
+    <div class="preview"><span class="tiny muted">Preview</span><span class="ar">${esc(withDraft(()=>res("أنا من {O}، [ساكن~ساكنة] في {C}")))}</span></div>`;}
+  if(st==="field"){q=`<h1>What do you do?</h1><p>You'll get a work vocabulary pack and a line about your job in your introduction.</p>`;
+    body=`<div class="choices two">${FIELDS.map(f=>`<button class="choice" data-pick-f="${f[0]}" aria-pressed="${d.field===f[0]}"><b>${esc(f[1])}</b>${PACKMAP[f[0]]?`<span class="tiny muted">+ ${PACKS[PACKMAP[f[0]]].w.length+PACKS[PACKMAP[f[0]]].ph.length} work words</span>`:""}</button>`).join("")}</div>`;}
+  if(st==="goals"){q=`<h1>What do you want Arabic for?</h1><p>Pick all that apply. Lessons that match get a "For you" tag and are suggested first.</p>`;
+    body=`<div class="choices">${GOALS.map(g=>`<button class="choice" data-pick-goal="${g[0]}" aria-pressed="${d.goals.includes(g[0])}"><b>${esc(g[1])}</b></button>`).join("")}</div>`;ok=d.goals.length>0;}
+  if(st==="level"){q=`<h1>Where are you starting from?</h1><p>You can open any lesson at any time. This just sets where we begin.</p>`;
+    body=`<div class="choices">${LEVELS.map(l=>`<button class="choice" data-pick-l="${l[0]}" aria-pressed="${d.level===l[0]}"><b>${esc(l[1])}</b><span class="tiny muted">${esc(l[2])}</span></button>`).join("")}</div>`;}
+  if(st==="time"){q=`<h1>How much time can you give it?</h1><p>This sets how many new words you meet each day and your weekly goal.</p>`;
+    body=`<h3>Each day</h3><div class="choices two">${MINS.map(m=>`<button class="choice" data-pick-m="${m[0]}" aria-pressed="${d.mins===m[0]}"><b>${m[1]}</b><span class="tiny muted">${m[2]} · ${m[3]} new words</span></button>`).join("")}</div>
+    <h3>Days per week</h3><div class="seg" role="group">${[3,5,7].map(n=>`<button data-pick-days="${n}" aria-pressed="${d.days===n}">${n} days</button>`).join("")}</div>`;}
+  if(st==="look"){q=`<h1>Pick your colour</h1><p>Make it yours. You can change this later.</p>`;
+    body=`<div class="swatches">${Object.entries(ACCENTS).map(([k,a])=>`<button class="swatch" style="background:${a[1]}" data-pick-acc="${k}" aria-pressed="${d.accent===k}" aria-label="${a[0]}">${d.accent===k?"✓":""}</button>`).join("")}</div>
+    <p class="small muted">${esc(ACCENTS[d.accent][0])}</p><div class="hero-l">${ill(1,"anim")}</div>`;}
+  if(st==="plan"){const lv=d.level,m=MINS.find(x=>x[0]===d.mins);const pk=PACKMAP[d.field];
+    const fy=COURSE.filter(L=>L.n>=lv&&(LMETA[L.n].g||[]).some(g=>d.goals.includes(g))).slice(0,3);
+    q=`<h1>Your plan, ${esc(d.name.split(" ")[0])}</h1><p>Here's how Kalam will work for you.</p>`;
+    body=`<div class="panel stack"><div class="row"><span class="chip acc">Start</span><b>Lesson ${lv}: ${esc(COURSE[lv-1].t)}</b></div>
+     <div class="row"><span class="chip good">Daily</span><span>${m[3]} new words, about ${m[1]}, ${d.days} days a week</span></div>
+     ${pk?`<div class="row"><span class="chip ind">Work</span><span>${esc(PACKS[pk].t)} pack</span></div>`:""}
+     <div class="row"><span class="chip gold">You</span><span>A personal introduction to practise saying</span></div>
+     ${fy.length?`<div class="stack" style="gap:6px"><h3>Suggested first</h3>${fy.map(L=>`<span class="small">Lesson ${L.n}: ${esc(L.t)}</span>`).join("")}</div>`:""}</div>`;}
+  return `<div class="onb">${onbDots(onbStep-1,tot-1)}<div class="q">${q}</div><div class="stack">${body}</div>${nav(st==="plan"?"Start learning":"Continue",!ok)}</div>`;
+};
+function withDraft(fn){const real=S.profile;S.profile=draft;try{return fn();}finally{S.profile=real;}}
+function finishOnboarding(){const d=draft;d.done=true;if(!d.joined)d.joined=dstr();S.profile=d;draft=null;
+  const m=MINS.find(x=>x[0]===d.mins);S.newPerDay=m?m[3]:10;S.cur=S.migrated?Math.max(S.cur,d.level):d.level;
+  persist();applyLook();buildItems();onbStep=0;go("home");setTimeout(()=>toast(`Welcome, ${d.name.split(" ")[0]}. Your plan is ready.`),300);}
+
+VIEWS.restore=function(){return `<div class="onb"><button class="back" data-act="restoreback">${I.chevl} Back</button><div class="q"><h1>Restore a backup</h1><p class="muted">Choose a Kalam backup file, or paste a backup code.</p></div>${backupRestoreUI()}</div>`;};
+
+// ================= HOME =================
+VIEWS.home=function(){
+  const p=pinfo(),[gAr,gEn]=greeting();const n=nextLesson(),L=COURSE[n-1];const rc=reviewCount(),due=dueList().length,nl=Math.min(newLeft(),newList().length);
+  const st=streak(),wk=weekDays(),goal=P().days;const pct=Math.min(1,wk/goal);const C=2*Math.PI*34;
+  const done=Object.keys(S.done).length;
+  let sub=rc?`${rc} card${rc===1?"":"s"} to review today`:"Reviews are clear for today";sub+=` and lesson ${n} is up next.`;
+  if(st>=3)sub+=` ${st} days in a row, keep it going.`;
+  const wkw=weak().slice(0,4);const pk=myPack();
+  let cells="";const so=-(7*15+new Date().getDay());for(let o=so;o<=0;o++){const c=S.days[dstr(o)]||0;cells+=`<i class="${c===0?"":c<10?"l1":c<30?"l2":"l3"}${o===0?" today":""}" title="${dstr(o)}: ${c}"></i>`;}
+  const install=BUILD==="web"&&!isStandalone()&&!S.dismiss.install&&(deferredPrompt||isIOS());
+  return `<div class="stack lg">
+  <section class="greet"><span class="ar">${gAr} يا ${esc(p.nameAr||p.name)}</span><h1>${gEn}, ${esc(p.name.split(" ")[0])}</h1><p>${esc(sub)}</p></section>
+  ${install?`<div class="banner">${I.phone}<div class="grow"><b>Install Kalam</b><p class="small muted">${deferredPrompt?"Add it to your home screen. It opens full screen and works offline.":"Tap Share, then Add to Home Screen."}</p></div>${deferredPrompt?`<button class="btn sm primary" data-act="install">Install</button>`:""}<button class="x" data-act="dismissinstall" aria-label="Dismiss">×</button></div>`:""}
+  <div class="homegrid">
+   <section class="panel next span"><div class="art">${ill(n,"anim")}</div>
+    <div class="stack"><div class="chips"><span class="chip">Lesson ${n} of 24</span>${forYou(n)?`<span class="chip acc">For you</span>`:""}${S.done[n]?`<span class="chip good">Done</span>`:""}</div>
+     <h2>${esc(L.t)}</h2><p class="muted small">You'll be able to: ${esc(LMETA[n].can.toLowerCase())}.</p>
+     <div class="row"><button class="btn primary" data-flow="${n}">${I.play} ${lessonPct(n)>0||S.done[n]?"Continue":"Start lesson"}</button><button class="btn" data-open="${n}">Details</button></div></div></section>
+   <section class="panel review stack"><div class="spread"><div><div class="lbl">Today's review</div><div class="big num">${rc}</div></div>
+     <div class="stats3" style="max-width:62%;text-align:right"><div><span class="lbl">Due</span><b>${due}</b></div><div><span class="lbl">New</span><b>${nl}</b></div><div><span class="lbl">Learned</span><b>${learned()}</b></div></div></div>
+     <button class="btn light block" data-act="review" ${rc?"":"disabled"}>${I.cards} ${rc?"Start review":"All caught up"}</button><div class="sadu thin" aria-hidden="true"></div></section>
+   <section class="panel row" style="align-items:center;flex-wrap:nowrap">
+     <svg class="ring" viewBox="0 0 84 84"><circle class="bg" cx="42" cy="42" r="34"/><circle class="fg" cx="42" cy="42" r="34" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}" transform="rotate(-90 42 42)"/><text x="42" y="49" text-anchor="middle">${wk}/${goal}</text></svg>
+     <div class="grow stack" style="gap:2px"><h3>This week</h3><b>${wk>=goal?"Weekly goal reached":`${goal-wk} more day${goal-wk===1?"":"s"} to hit your goal`}</b><span class="small muted">${st} day streak · best ${S.best||st}</span></div></section>
+   <section class="panel stack"><div class="spread"><h3>Your introduction</h3><button class="btn sm" data-go="intro">Practise</button></div>
+     ${INTRO_ITEMS.slice(0,2).map(it=>itemRow(it)).join("")}</section>
+   ${pk?`<section class="panel stack"><div class="spread"><h3>${esc(PACKS[pk].t)} pack</h3><button class="btn sm" data-go="pack">Open</button></div><p class="small muted">${PACK_ITEMS.length} words and phrases for your work${S.packOn?", included in your reviews":""}.</p></section>`:""}
+   ${wkw.length?`<section class="panel stack span"><div class="spread"><h3>Words you keep missing</h3><button class="btn sm" data-go="weak">Drill them</button></div><div class="list">${wkw.map(it=>itemRow(it)).join("")}</div></section>`:""}
+   <section class="panel stack span"><div class="spread"><h3>Last 16 weeks</h3><span class="small muted">${done} of 24 lessons done</span></div><div class="heat" aria-label="Study days">${cells}</div></section>
+  </div></div>`;
+};
+
+// ================= LESSONS =================
+VIEWS.lessons=function(){
+  let h=`<div class="stack lg"><div class="stack" style="gap:6px"><h1>Lessons</h1><p class="muted">All 24 are open. Do them in order, jump ahead, or run several back to back. Lessons tagged "For you" match your goals.</p></div>
+  <div><label class="check small"><input type="checkbox" id="quickT" ${S.quick?"checked":""} style="width:20px;height:20px;accent-color:var(--accent)"> Quick mode: skip the checks at the end of each lesson</label></div>`;
+  for(const ph of [1,2,3,4]){h+=`<section class="stack" style="gap:10px"><h3>Phase ${ph} · ${PHASES[ph]}</h3><div class="lessons">`;
+    for(const L of COURSE.filter(l=>l.p===ph)){const d=S.done[L.n],pc=lessonPct(L.n),nx=L.n===nextLesson();
+      h+=`<div class="lesson ${d?"done":""}"><button class="thumb" data-open="${L.n}" aria-label="Open lesson ${L.n}" style="border:0">${ill(L.n)}</button>
+      <button class="body" data-open="${L.n}" style="border:0;background:none;padding:0;text-align:left"><span class="chips"><span class="chip">L${L.n}</span>${d?`<span class="chip good">Done${d.s!=null?` · ${d.s}%`:""}</span>`:""}${nx?`<span class="chip acc">Up next</span>`:forYou(L.n)&&!d?`<span class="chip gold">For you</span>`:""}</span><b>${esc(L.t)}</b><span class="bar"><i style="width:${pc}%"></i></span></button>
+      <button class="go" data-flow="${L.n}" aria-label="Start lesson ${L.n}">${I.play}</button></div>`;}
+    h+=`</div></section>`;}
+  return h+"</div>";
+};
+VIEWS.lesson=function(){const L=COURSE[view.n-1];const its=LESSON_ITEMS[L.n];const roots=[...new Set(its.filter(i=>i.root).map(i=>i.root))];
+  const w=its.filter(i=>!i.root&&i.kind==="word"),p=its.filter(i=>i.kind==="phrase");const d=S.done[L.n];
+  let h=`<div class="stack lg"><button class="back" data-go="lessons">${I.chevl} Lessons</button>
+  <div class="hero-l">${ill(L.n,"anim")}</div>
+  <div class="stack" style="gap:6px"><div class="chips"><span class="chip">Phase ${L.p}: ${PHASES[L.p]}</span>${forYou(L.n)?`<span class="chip acc">For you</span>`:""}${d?`<span class="chip good">Done${d.s!=null?` · ${d.s}%`:""}</span>`:""}</div>
+   <h1>Lesson ${L.n}: ${esc(L.t)}</h1><p class="muted">You'll be able to: ${esc(LMETA[L.n].can.toLowerCase())}. ${its.length} words and phrases.</p></div>
+  <div class="row"><button class="btn primary" style="flex:2" data-flow="${L.n}">${I.play} ${d?"Do it again":"Start lesson"}</button>${L.n<24?`<button class="btn" style="flex:1" data-flow="${L.n}" data-chain="1">${I.bolt} Run ${L.n}-${Math.min(24,L.n+2)}</button>`:""}</div>
+  <div class="modes">
+   <button class="mode" data-start="cards" data-scope="L${L.n}">${I.cards}<b>Flashcards</b><span class="small muted">Graded review</span></button>
+   <button class="mode" data-start="quiz" data-scope="L${L.n}">${I.quiz}<b>Quiz</b><span class="small muted">10 questions</span></button>
+   <button class="mode" data-start="listen" data-scope="L${L.n}">${I.ear}<b>Listening</b><span class="small muted">Hear and choose</span></button>
+   <button class="mode" data-start="speak" data-scope="L${L.n}">${I.mic}<b>Speaking</b><span class="small muted">Say it aloud</span></button></div>
+  <div class="grammar"><b>Grammar: ${esc(L.g[0])}</b><p>${arHTML(L.g[1])}</p></div>`;
+  if(roots.length){h+=`<details class="panel sec" open><summary><h3>Roots · ${roots.length}</h3></summary>`;for(const r of roots)h+=`<div class="rootblock"><span class="rootlbl">${esc(r)}</span><div class="list">${its.filter(i=>i.root===r).map(i=>itemRow(i)).join("")}</div></div>`;h+=`</details>`;}
+  if(w.length)h+=`<details class="panel sec" open><summary><h3>Core words · ${w.length}</h3></summary><div class="list">${w.map(i=>itemRow(i)).join("")}</div></details>`;
+  if(p.length)h+=`<details class="panel sec" open><summary><h3>Phrases · ${p.length}</h3></summary><button class="btn sm" data-sayall="L${L.n}" style="margin-top:6px">${I.play} Play all phrases</button><div class="list">${p.map(i=>itemRow(i)).join("")}</div></details>`;
+  h+=`<div class="task"><input type="checkbox" id="taskL" data-task="${L.n}" ${S.tasks[L.n]?"checked":""}><label for="taskL"><b>Real-world task.</b> ${arHTML(res(L.task))}</label></div>`;
+  return h+"</div>";};
+
+// ================= LESSON FLOW =================
+function chunk(a,n){const o=[];for(let i=0;i<a.length;i+=n)o.push(a.slice(i,i+n));return o;}
+function startFlow(n,chain){const L=COURSE[n-1],its=LESSON_ITEMS[n];const steps=[{t:"intro"}];
+  const roots=[...new Set(its.filter(i=>i.root).map(i=>i.root))];roots.forEach(r=>steps.push({t:"root",root:r,items:its.filter(i=>i.root===r)}));
+  chunk(its.filter(i=>!i.root&&i.kind==="word"),4).forEach(c=>steps.push({t:"words",items:c}));
+  steps.push({t:"grammar"});
+  chunk(its.filter(i=>i.kind==="phrase"),3).forEach(c=>steps.push({t:"phrases",items:c}));
+  if(!S.quick){const pool=its.filter(i=>i.kind==="word"||its.length<8);
+    shuffle(pool.length>=4?pool:its).slice(0,5).forEach(it=>{const dir=Math.random()<.5?"ar":"en",f=dir==="en"?"ar":"en";steps.push({t:"check",id:it.id,dir,opts:shuffle([it].concat(distract(it,its,f))).map(o=>o.id),picked:null});});
+    const ph=its.filter(i=>i.kind==="phrase");if(ph.length)steps.push({t:"say",id:shuffle(ph)[0].id,res:null});}
+  steps.push({t:"done"});
+  session={kind:"flow",n,steps,pos:0,right:0,checks:steps.filter(s=>s.t==="check").length,chain:chain||0,listening:false,rec:null};
+  go("flow",{tab:"lessons"});}
+VIEWS.flow=function(){const s=session;if(!s)return VIEWS.home();const L=COURSE[s.n-1],st=s.steps[s.pos];const pct=Math.round(100*s.pos/(s.steps.length-1));
+  const bar=`<div class="sessbar"><button class="x" data-act="flowexit" aria-label="Leave lesson">×</button><div class="bar"><i style="width:${pct}%"></i></div><span class="small muted num">L${s.n}</span></div>`;
+  const cont=(label="Continue",extra="")=>`<div class="foot">${extra}<button class="btn primary block" data-act="flownext">${label}<span class="kbd">Enter</span></button></div>`;
+  const tlist=(items,noRoot)=>`<div class="teach">${items.map((it,i)=>{const n=noteText(it);return `<div class="tcard" style="animation-delay:${i*60}ms"><div class="txt"><span class="ar">${esc(it.ar)}</span><span class="small">${arHTML(enText(it))}</span>${n?`<span class="tiny muted">${arHTML(n)}</span>`:""}<span class="chips" style="margin-top:4px">${chips(noRoot?Object.assign({},it,{root:""}):it).replace(/<span class="chip">L\d+<\/span>/,"")}</span></div><button class="spk" data-say="${esc(it.ar)}" aria-label="Play">${I.spk}</button></div>`;}).join("")}</div>`;
+  let body="";
+  if(st.t==="intro")return `<div class="sess">${bar}<div class="flowbody"><div class="hero-l">${ill(s.n,"anim")}</div><div class="stack" style="gap:6px"><span class="chip" style="align-self:flex-start">Lesson ${s.n} · Phase ${L.p}</span><h1>${esc(L.t)}</h1><p class="muted">By the end you'll be able to ${esc(LMETA[s.n].can.toLowerCase())}.</p>
+    <div class="chips"><span class="chip">${LESSON_ITEMS[s.n].length} items</span><span class="chip">${s.steps.length-2} steps</span>${S.quick?`<span class="chip gold">Quick mode</span>`:""}${s.chain?`<span class="chip acc">Run: ${s.chain} more after this</span>`:""}</div></div></div>${cont("Let's go")}</div>`;
+  if(st.t==="root")body=`<div class="flowhead"><span class="tiny muted">Root family</span><span class="ar root">${esc(st.root)}</span><p class="small muted">These words grow from the same three letters. Spot the shared root.</p></div>${tlist(st.items,true)}`;
+  if(st.t==="words")body=`<div class="flowhead"><span class="tiny muted">Core words</span><h2>Tap to hear each one</h2></div>${tlist(st.items)}`;
+  if(st.t==="phrases")body=`<div class="flowhead"><span class="tiny muted">Phrases to use this week</span><h2>Say each one aloud</h2></div>${tlist(st.items)}`;
+  if(st.t==="grammar")body=`<div class="flowhead"><span class="tiny muted">Grammar</span><h2>${esc(L.g[0])}</h2></div><div class="grammar" style="font-size:1.02rem"><p>${arHTML(L.g[1])}</p></div>`;
+  if(st.t==="root"||st.t==="words"||st.t==="phrases")return `<div class="sess">${bar}<div class="flowbody">${body}</div>${cont("Continue",`<button class="btn" data-sayall="F">${I.play} Play all</button>`)}</div>`;
+  if(st.t==="grammar")return `<div class="sess">${bar}<div class="flowbody">${body}</div>${cont()}</div>`;
+  if(st.t==="check"){const it=BYID[st.id];const k=s.steps.filter((x,i)=>x.t==="check"&&i<=s.pos).length;
+    const prompt=st.dir==="ar"?`<span class="ar big">${esc(it.ar)}</span>`:`<span class="en big">${arHTML(enText(it))}</span>`;
+    const opts=st.opts.map((oid,i)=>{const o=BYID[oid];let c="";if(st.picked){if(oid===st.id)c="right";else if(oid===st.picked)c="wrong";}
+      return `<button class="opt ${c}" data-fpick="${oid}" ${st.picked?"disabled":""}><span class="k">${i+1}</span>${st.dir==="en"?`<span class="ar">${esc(o.ar)}</span>`:arHTML(enText(o))}</button>`;}).join("");
+    return `<div class="sess">${bar}<div class="card q"><span class="tiny muted">Quick check ${k} of ${s.checks} · ${st.dir==="ar"?"choose the meaning":"choose the Arabic"}</span>${prompt}</div><div class="foot"><div class="opts">${opts}</div>${st.picked?`<button class="btn primary block" data-act="flownext">Continue<span class="kbd">Enter</span></button>`:""}</div></div>`;}
+  if(st.t==="say"){const it=BYID[st.id];const canMic=!!SR&&!micBlocked;let r="";
+    if(st.res&&!st.res.err){const sc=st.res.score,c=sc>=.85?"good":sc>=.6?"close":"bad";r=`<div class="verdict ${c}"><b>${sc>=.85?"Clear":sc>=.6?"Close":"Try again"} <span class="num">(${Math.round(sc*100)}%)</span></b><span class="small">Heard: <span class="heard ar">${esc(st.res.heard)}</span></span></div>`;}
+    else if(st.res&&st.res.err==="no-speech")r=`<div class="verdict close"><b>Nothing heard</b><span class="small">Tap the mic and speak straight away.</span></div>`;
+    return `<div class="sess">${bar}<div class="card"><span class="tiny muted">Say it aloud</span><span class="ar big">${esc(it.ar)}</span><span class="muted">${arHTML(enText(it))}</span>
+     <div class="row" style="justify-content:center"><button class="btn sm" data-say="${esc(it.ar)}">${I.spk} Hear it</button><button class="btn sm" data-sayslow="${esc(it.ar)}">Slowly</button></div>
+     ${canMic?`<button class="mic ${s.listening?"on":""}" data-act="fmic" aria-label="Speak">${I.mic}</button><span class="small muted">${s.listening?"Listening…":"Tap and say it"}</span>`:`<p class="small muted">Say it aloud two or three times, matching the recording.</p>`}${r}</div>${cont(canMic&&!st.res?"Skip":"Continue")}</div>`;}
+  if(st.t==="done"){const sc=s.checks?Math.round(100*s.right/s.checks):null;const nx=suggestAfter(s.n);const p=pinfo();
+    return `<div class="sess"><div class="card"><div style="width:min(240px,70%)">${ill("done","anim")}</div><span class="ar big" style="color:var(--accent)">${praise()} يا ${esc(p.nameAr||p.name)}</span>
+     <h2>Lesson ${s.n} complete</h2><p class="muted">${sc!=null?`You got ${s.right} of ${s.checks} checks right. `:""}${LESSON_ITEMS[s.n].length} items are now in your reviews.</p>
+     <div class="chips"><span class="chip good">${Object.keys(S.done).length} of 24 lessons</span><span class="chip">${streak()} day streak</span></div></div>
+     <div class="foot">${nx?`<button class="btn primary block" data-act="flownextlesson">${I.bolt} ${s.chain?`Keep going: lesson ${nx}`:`Next: lesson ${nx}, ${esc(COURSE[nx-1].t)}`}<span class="kbd">Enter</span></button>`:""}
+     <div class="row"><button class="btn" style="flex:1" data-start="cards" data-scope="L${s.n}">Review these</button><button class="btn" style="flex:1" data-go="home">Home</button></div></div></div>`;}
+  return "";};
+function flowNext(){const s=session;const st=s.steps[s.pos];if(st.t==="check"&&!st.picked)return;
+  if(s.steps[s.pos+1]&&s.steps[s.pos+1].t==="done")completeLesson();
+  s.pos=Math.min(s.steps.length-1,s.pos+1);stopAll();render();window.scrollTo(0,0);
+  const nst=s.steps[s.pos];if(nst.t==="done")confetti();
+  else if(S.autoplay&&nst.items&&nst.items[0])setTimeout(()=>say(nst.items[0].ar),250);}
+function completeLesson(){const s=session;const sc=s.checks?Math.round(100*s.right/s.checks):null;
+  const prev=S.done[s.n];S.done[s.n]={d:dstr(),s:sc!=null?Math.max(sc,prev&&prev.s||0):(prev&&prev.s)};
+  if(s.n===S.cur){const nx=suggestAfter(s.n);if(nx)S.cur=nx;}bump(3);persist();buzz([15,40,15]);}
+
+// ================= PRACTICE =================
+function scopeItems(sc){
+  if(!sc||sc==="cur")return LESSON_ITEMS[nextLesson()];
+  if(sc==="done"){const a=ITEMS.filter(it=>it.src==="lesson"&&S.done[it.lesson]);return a.length?a:LESSON_ITEMS[nextLesson()];}
+  if(sc==="weak")return weak();if(sc==="phr")return ITEMS.filter(i=>i.src==="lesson"&&i.kind==="phrase"&&(S.done[i.lesson]||i.lesson===nextLesson()));
+  if(sc==="mine")return MINE_ITEMS;if(sc==="pack")return PACK_ITEMS;if(sc==="intro")return INTRO_ITEMS;
+  if(sc[0]==="L")return LESSON_ITEMS[+sc.slice(1)]||[];if(sc[0]==="R")return (ROOTS[sc.slice(1)]||{items:[]}).items;return eligible();}
+VIEWS.practice=function(){const n=nextLesson();
+  const sc=[["cur",`Lesson ${n}`],["done","Done lessons"],["phr","Phrases"],["weak",`Weak (${weak().length})`]];if(MINE_ITEMS.length)sc.push(["mine",`My words (${MINE_ITEMS.length})`]);if(PACK_ITEMS.length)sc.push(["pack","Work pack"]);sc.push(["intro","About me"]);
+  if(!sc.find(x=>x[0]===pScope))pScope="cur";const c=scopeItems(pScope).length;const rc=reviewCount();
+  return `<div class="stack lg"><div class="stack" style="gap:6px"><h1>Practice</h1><p class="muted">Pick a set, then a way to drill it. Flashcards update your review schedule.</p></div>
+  <button class="panel review row" data-act="review" ${rc?"":"disabled"} style="text-align:left;flex-wrap:nowrap;color:#fff"><div class="grow"><div class="lbl">Daily review</div><b style="font-size:1.25rem">${rc?`${rc} cards waiting`:"All caught up"}</b></div>${I.cards.replace("<svg",'<svg style="width:28px;height:28px"')}<div class="sadu thin" aria-hidden="true"></div></button>
+  <div class="seg" role="group" aria-label="What to practise">${sc.map(([k,l])=>`<button data-pscope="${k}" aria-pressed="${pScope===k}">${esc(l)}</button>`).join("")}</div>
+  <p class="small muted">${c} item${c===1?"":"s"} in this set.</p>
+  <div class="modes">
+   <button class="mode" data-start="cards" data-scope="${pScope}" ${c?"":"disabled"}>${I.cards}<b>Flashcards</b><span class="small muted">Both directions, graded</span></button>
+   <button class="mode" data-start="quiz" data-scope="${pScope}" ${c>=2?"":"disabled"}>${I.quiz}<b>Quiz</b><span class="small muted">Multiple choice</span></button>
+   <button class="mode" data-start="listen" data-scope="${pScope}" ${c>=2?"":"disabled"}>${I.ear}<b>Listening</b><span class="small muted">Hear and choose</span></button>
+   <button class="mode" data-start="speak" data-scope="${pScope}" ${c?"":"disabled"}>${I.mic}<b>Speaking</b><span class="small muted">${SR&&!micBlocked?"Scored by the mic":"Self-check"}</span></button></div></div>`;};
+
+// cards
+function startCards(scope){let q;if(scope==="review"){q=shuffle(dueList()).concat(newList().slice(0,newLeft()));}else q=shuffle(scopeItems(scope));
+  if(!q.length)return toast("Nothing to review in this set yet.");
+  session={kind:"cards",q:q.map(it=>({id:it.id,dir:isNew(it.id)?"ar":(Math.random()<.35?"en":"ar")})),pos:0,shown:false,done:0,total:q.length,again:0,from:view.name};
+  go("cards");if(S.autoplay&&session.q[0].dir==="ar")setTimeout(()=>say(BYID[session.q[0].id].ar),200);}
+VIEWS.cards=function(){const s=session;if(!s||s.pos>=s.q.length)return finishView(`You reviewed ${s?s.done:0} cards.`,s&&s.again?`${s.again} came back round for another go.`:"");
+  const c=s.q[s.pos],it=BYID[c.id];const pct=Math.round(100*s.done/Math.max(1,s.total));
+  const front=c.dir==="ar"?`<span class="ar big">${esc(it.ar)}</span>`:`<span class="en big">${arHTML(enText(it))}</span>`;
+  const back=c.dir==="ar"?`<span class="en big">${arHTML(enText(it))}</span>`:`<span class="ar big">${esc(it.ar)}</span>`;const n=noteText(it);
+  return `<div class="sess"><div class="sessbar"><button class="x" data-go="${s.from==="lesson"?"lessons":s.from==="practice"?"practice":"home"}" aria-label="End">×</button><div class="bar"><i style="width:${pct}%"></i></div><span class="small muted num">${s.done}/${s.total}</span></div>
+  <div class="card ${s.shown?"":"tap"}" id="flashcard" ${s.shown?"":'role="button" tabindex="0" aria-label="Show answer"'}>${isNew(c.id)?'<span class="chip acc corner">New</span>':""}
+   <span class="tiny muted">${c.dir==="ar"?"What does this mean?":"Say it in Arabic"}</span>${front}
+   ${c.dir==="ar"?`<button class="spk" data-say="${esc(it.ar)}" aria-label="Play">${I.spk}</button>`:""}
+   ${s.shown?`<div class="ans">${back}${c.dir==="en"?`<button class="spk" data-say="${esc(it.ar)}" aria-label="Play">${I.spk}</button>`:""}${n?`<span class="small muted">${arHTML(n)}</span>`:""}<div class="chips" style="justify-content:center">${chips(it)}</div></div>`:""}</div>
+  <div class="foot">${s.shown?`<span class="hint touch-only">Swipe left for Again, right for Good</span><div class="grades">
+   <button class="grade again" data-grade="0">Again<small>now</small></button><button class="grade hard" data-grade="1">Hard<small>${nextLabel(c.id,1)}</small></button>
+   <button class="grade good" data-grade="2">Good<small>${nextLabel(c.id,2)}</small></button><button class="grade easy" data-grade="3">Easy<small>${nextLabel(c.id,3)}</small></button></div><span class="hint kbd" style="align-self:center">1 2 3 4</span>`
+  :`<span class="hint touch-only">Tap the card to reveal</span><button class="btn primary block" data-act="flip">Show answer<span class="kbd">Space</span></button>`}</div></div>`;};
+function doGrade(g){const s=session,c=s.q[s.pos];grade(c.id,g);buzz(g===0?[20,40,20]:12);
+  if(g===0){s.again++;s.q.splice(Math.min(s.q.length,s.pos+4),0,{id:c.id,dir:"ar"});s.total++;}
+  s.done++;s.pos++;s.shown=false;render();if(s.pos>=s.q.length)confetti();
+  const nx=s.q[s.pos];if(nx&&S.autoplay&&nx.dir==="ar")say(BYID[nx.id].ar);}
+function flip(){session.shown=true;buzz(8);render();if(S.autoplay){const c=session.q[session.pos];if(c.dir==="en")say(BYID[c.id].ar);}}
+function finishView(msg,sub){const p=pinfo();return `<div class="sess"><div class="card"><div style="width:min(220px,64%)">${ill("done","anim")}</div><span class="ar big" style="color:var(--accent)">${praise()} يا ${esc(p.nameAr||p.name)}</span><p>${esc(msg)}</p>${sub?`<p class="small muted">${esc(sub)}</p>`:""}</div>
+  <div class="foot"><button class="btn primary block" data-go="home">Back to home</button><button class="btn block" data-go="practice">More practice</button></div></div>`;}
+
+// quiz + listening
+function distract(it,pool,field){const seen=new Set([it[field]]);const out=[];
+  const cand=shuffle(pool.filter(o=>o.id!==it.id&&o.kind===it.kind)).concat(shuffle(ITEMS.filter(o=>o.id!==it.id&&o.kind===it.kind&&o.src==="lesson"&&Math.abs(o.lesson-(it.lesson||12))<=4)));
+  for(const o of cand){if(!seen.has(o[field])){seen.add(o[field]);out.push(o);}if(out.length===3)break;}return out;}
+function startQuiz(kind,scope){const pool=scopeItems(scope);if(!pool.length)return toast("No items in this set yet.");
+  const qs=shuffle(pool).slice(0,10).map(it=>{const dir=kind==="listen"?"listen":(Math.random()<.5?"ar":"en");const f=dir==="en"?"ar":"en";return {id:it.id,dir,opts:shuffle([it].concat(distract(it,pool,f))).map(o=>o.id),picked:null};});
+  session={kind,q:qs,pos:0,right:0};go(kind);if(kind==="listen")setTimeout(()=>say(BYID[qs[0].id].ar),250);}
+VIEWS.quiz=VIEWS.listen=function(){const s=session;if(!s||s.pos>=s.q.length)return finishView(`You scored ${s.right} out of ${s.q.length}.`,s.right<s.q.length?"Missed items were added to your weak words.":"A perfect round.");
+  const q=s.q[s.pos],it=BYID[q.id];
+  const prompt=q.dir==="listen"?`<span class="tiny muted">Listen and choose the meaning</span><button class="mic" data-say="${esc(it.ar)}" aria-label="Play again">${I.spk}</button><button class="btn sm" data-sayslow="${esc(it.ar)}">Play slowly</button>`
+   :q.dir==="ar"?`<span class="tiny muted">Choose the meaning</span><span class="ar big">${esc(it.ar)}</span>`:`<span class="tiny muted">Choose the Arabic</span><span class="en big">${arHTML(enText(it))}</span>`;
+  const opts=q.opts.map((oid,i)=>{const o=BYID[oid];let c="";if(q.picked){if(oid===q.id)c="right";else if(oid===q.picked)c="wrong";}
+    return `<button class="opt ${c}" data-pick="${oid}" ${q.picked?"disabled":""}><span class="k">${i+1}</span>${q.dir==="en"?`<span class="ar">${esc(o.ar)}</span>`:arHTML(enText(o))}</button>`;}).join("");
+  return `<div class="sess"><div class="sessbar"><button class="x" data-go="practice" aria-label="End">×</button><div class="bar"><i style="width:${Math.round(100*s.pos/s.q.length)}%"></i></div><span class="small muted num">${s.pos+1}/${s.q.length}</span></div>
+  <div class="card q">${prompt}${q.picked&&q.dir==="listen"?`<span class="ar big">${esc(it.ar)}</span>`:""}${q.picked?`<div class="chips" style="justify-content:center">${chips(it)}</div>`:""}</div>
+  <div class="foot"><div class="opts">${opts}</div>${q.picked?`<button class="btn primary block" data-act="nextq">${s.pos+1<s.q.length?"Next":"See result"}<span class="kbd">Enter</span></button>`:""}</div></div>`;};
+
+// speaking
+function startSpeak(scope){const pool=shuffle(scopeItems(scope)).slice(0,15);if(!pool.length)return toast("No items in this set yet.");
+  session={kind:"speak",q:pool.map(i=>i.id),pos:0,res:null,listening:false,rec:null,recUrl:null,good:0};go("speak");}
+VIEWS.speak=function(){const s=session;if(!s||s.pos>=s.q.length)return finishView(`You practised ${s.q.length} items and ${s.good} came out clear.`,"Repeat the close ones until they come out clear.");
+  const it=BYID[s.q[s.pos]];const st=S.speak[it.id];const canMic=!!SR&&!micBlocked;let r="";
+  if(s.res){if(s.res.err==="no-speech")r=`<div class="verdict close"><b>Nothing heard</b><span class="small">Tap the mic and speak straight away.</span></div>`;
+   else if(!s.res.err){const sc=s.res.score,c=sc>=.85?"good":sc>=.6?"close":"bad";r=`<div class="verdict ${c}"><b>${sc>=.85?"Clear. That would be understood.":sc>=.6?"Close. Listen again and repeat.":"Not recognised. Listen and try again."} <span class="num">(${Math.round(sc*100)}%)</span></b><span class="small">It heard: <span class="heard ar">${esc(s.res.heard||"…")}</span></span></div>`;}}
+  const note=!canMic&&s.pos===0?`<div class="notice"><b>Self-check mode</b><span>${BUILD==="artifact"?"The microphone is blocked inside Claude. Install Kalam from your own web address to get scored.":SR?"Microphone access was refused, so":"This browser can't recognise speech, so"}${BUILD==="artifact"?"":" listen, say it aloud, then mark yourself."}</span></div>`:"";
+  return `<div class="sess"><div class="sessbar"><button class="x" data-go="practice" aria-label="End">×</button><div class="bar"><i style="width:${Math.round(100*s.pos/s.q.length)}%"></i></div><span class="small muted num">${s.pos+1}/${s.q.length}</span></div>${note}
+  <div class="card"><span class="tiny muted">Say this aloud</span><span class="ar big">${esc(it.ar)}</span><span class="muted">${arHTML(enText(it))}</span>
+   <div class="row" style="justify-content:center"><button class="btn sm" data-say="${esc(it.ar)}">${I.spk} Hear it</button><button class="btn sm" data-sayslow="${esc(it.ar)}">Slowly</button></div>
+   ${canMic?`<button class="mic ${s.listening?"on":""}" data-act="mic" aria-label="Speak now">${I.mic}</button><span class="small muted">${s.listening?"Listening… speak now":"Tap and say it"}</span>`:""}${r}
+   ${canMic&&window.MediaRecorder?`<div class="row" style="justify-content:center"><button class="btn sm" data-act="record">${I.rec} ${s.recording?"Recording…":"Record myself"}</button>${s.recUrl?`<button class="btn sm" data-act="playme">${I.play} My voice</button>`:""}</div>`:""}
+   ${st?`<span class="tiny muted">Best so far: ${Math.round(st.b*100)}% over ${st.n} tr${st.n===1?"y":"ies"}</span>`:""}</div>
+  <div class="foot">${!canMic?`<div class="grades" style="grid-template-columns:1fr 1fr"><button class="grade again" data-self="0">Not yet<small>again later</small></button><button class="grade good" data-self="1">Said it well<small>next</small></button></div>`
+   :`<div class="row"><button class="btn" style="flex:1" data-act="skip">Skip</button><button class="btn primary" style="flex:2" data-act="nexts">Next</button></div>`}</div></div>`;};
+function micGo(target,store,after){if(store.listening){try{store.rec&&store.rec.stop();}catch(e){}return;}
+  store.listening=true;try{speechSynthesis.cancel();}catch(e){}render();
+  store.rec=listen(r=>{store.listening=false;store.rec=null;if(r.err){after({err:r.err});return;}
+    const it=BYID[target];const sc=score(it.ar,r.alts);const st=S.speak[it.id]||{n:0,b:0};st.n++;st.b=Math.max(st.b,sc);S.speak[it.id]=st;if(sc<.6)S.miss[it.id]=(S.miss[it.id]||0)+1;bump();persist();buzz(sc>=.85?12:[20,40,20]);after({score:sc,heard:r.alts[0]});});}
+async function recordMe(){const s=session;if(s.recording)return;try{const stream=await navigator.mediaDevices.getUserMedia({audio:true});const mr=new MediaRecorder(stream);const ch=[];
+  mr.ondataavailable=e=>ch.push(e.data);mr.onstop=()=>{stream.getTracks().forEach(t=>t.stop());if(s.recUrl)URL.revokeObjectURL(s.recUrl);s.recUrl=URL.createObjectURL(new Blob(ch,{type:mr.mimeType||"audio/webm"}));s.recording=false;render();};
+  s.recording=true;render();mr.start();setTimeout(()=>{try{mr.stop();}catch(e){}},3500);}catch(e){micBlocked=true;s.recording=false;render();}}
+
+// ================= ROOTS =================
+VIEWS.roots=function(){const q=view.q||"";const keys=Object.keys(ROOTS).filter(k=>!q||ROOTS[k].items.some(i=>i.en.toLowerCase().includes(q.toLowerCase())||norm(i.ar).includes(norm(q))));
+  return `<div class="stack lg"><div class="stack" style="gap:6px"><h1>Root explorer</h1><p class="muted">Most Arabic words grow from three letters. Learn the root and you can guess its whole family.</p></div>
+  <input type="search" id="rootq" placeholder="Filter by meaning or Arabic" value="${esc(q)}" aria-label="Filter roots">
+  <div class="roots">${keys.map(k=>{const r=ROOTS[k];const kn=r.items.filter(i=>S.cards[i.id]&&S.cards[i.id].r>0).length;return `<button class="rootchip" data-root="${k}"><span class="ar">${esc(r.root)}</span><small>${esc(enText(r.items[0]).split(/[,(]/)[0])}</small><small>${kn}/${r.items.length} known</small></button>`;}).join("")||'<div class="empty">No roots match.</div>'}</div></div>`;};
+VIEWS.root=function(){const r=ROOTS[view.k];const ls=[...new Set(r.items.map(i=>i.lesson))];
+  return `<div class="stack lg"><button class="back" data-go="roots">${I.chevl} Roots</button>
+  <div class="panel stack" style="align-items:center;text-align:center"><span class="ar" style="font-size:3.2rem;font-weight:700;color:var(--accent);letter-spacing:.3em">${esc(r.root)}</span><span class="muted small">Appears in lesson${ls.length>1?"s":""} ${ls.join(", ")}</span></div>
+  <section class="panel"><div class="list">${r.items.map(i=>itemRow(i)).join("")}</div></section>
+  <div class="row"><button class="btn" style="flex:1" data-start="cards" data-scope="R${view.k}">${I.cards} Drill this root</button><button class="btn" style="flex:1" data-start="speak" data-scope="R${view.k}">${I.mic} Say them</button></div></div>`;};
+
+// ================= YOU =================
+VIEWS.you=function(){const p=pinfo(),pr=P();const done=Object.keys(S.done).length;const acc=S.stat.q?Math.round(100*S.stat.c/S.stat.q):null;
+  const ph=[1,2,3,4].map(n=>{const ls=COURSE.filter(L=>L.p===n);const d=ls.filter(L=>S.done[L.n]).length;return `<div class="stack" style="gap:4px"><div class="spread small"><span>Phase ${n} · ${PHASES[n]}</span><span class="muted num">${d}/${ls.length}</span></div><div class="bar good"><i style="width:${Math.round(100*d/ls.length)}%"></i></div></div>`;}).join("");
+  const pk=myPack();const fl=FIELDS.find(f=>f[0]===pr.field);
+  return `<div class="stack lg">
+  <section class="row" style="flex-wrap:nowrap;gap:14px"><span class="avatar xl">${initials()}</span><div class="grow"><h1>${esc(p.name)}</h1><p class="muted small">${esc([p.oAr?`From ${p.oEn.replace(/^the /,"the ")}`:"",p.hasCity?`living in ${p.cEn}`:"",fl?fl[1]:""].filter(Boolean).join(" · "))}</p>${pr.joined?`<p class="tiny muted">Learning with Kalam since ${esc(new Date(pr.joined+"T12:00").toLocaleDateString(undefined,{day:"numeric",month:"long",year:"numeric"}))}</p>`:""}</div><button class="btn sm" data-go="profile">${I.pen} Edit</button></section>
+  <div class="tiles"><div class="tile"><b>${streak()}</b><span>Day streak</span></div><div class="tile"><b>${S.best||0}</b><span>Best streak</span></div><div class="tile"><b>${done}/24</b><span>Lessons</span></div>
+   <div class="tile"><b>${learned()}</b><span>Words learned</span></div><div class="tile"><b>${mastered()}</b><span>Mastered</span></div><div class="tile"><b>${acc!=null?acc+"%":"–"}</b><span>Quiz accuracy</span></div></div>
+  <section class="panel stack">${ph}</section>
+  <section class="panel"><h3 style="margin-bottom:4px">Made for you</h3>
+   <button class="rowlink" data-go="intro">${I.user}<span class="grow"><b>Your introduction</b><br><span class="small muted">${INTRO_ITEMS.length} lines about you, in Arabic</span></span>${I.chevr}</button>
+   ${pk?`<button class="rowlink" data-go="pack">${I.brief}<span class="grow"><b>${esc(PACKS[pk].t)} pack</b><br><span class="small muted">${PACK_ITEMS.length} work words and phrases</span></span>${I.chevr}</button>`:""}
+   <button class="rowlink" data-go="mine">${I.plus}<span class="grow"><b>My words</b><br><span class="small muted">${MINE_ITEMS.length?`${MINE_ITEMS.length} saved`:"Add words you hear around you"}</span></span>${I.chevr}</button></section>
+  <section class="panel"><h3 style="margin-bottom:4px">Settings</h3>
+   <button class="rowlink" data-go="settings">${I.gear}<span class="grow"><b>Speech, study and appearance</b></span>${I.chevr}</button>
+   <button class="rowlink" data-go="backup">${I.save}<span class="grow"><b>Backup and restore</b><br><span class="small muted">${esc(syncState)}</span></span>${I.chevr}</button>
+   ${BUILD==="web"&&!isStandalone()?`<button class="rowlink" data-act="${deferredPrompt?"install":"installhelp"}">${I.phone}<span class="grow"><b>Install Kalam</b><br><span class="small muted">Home screen icon, full screen, works offline</span></span>${I.chevr}</button>`:""}
+   <button class="rowlink" data-go="grammar">${I.table}<span class="grow"><b>Grammar reference</b></span>${I.chevr}</button></section>
+  </div>`;};
+VIEWS.intro=function(){return `<div class="stack lg"><button class="back" data-go="you">${I.chevl} You</button><div class="hero-l">${ill("welcome","anim")}</div>
+  <div class="stack" style="gap:6px"><h1>Your introduction</h1><p class="muted">Built from your profile. Learn it by heart and you can introduce yourself anywhere in Saudi.</p></div>
+  <section class="panel"><div class="list">${INTRO_ITEMS.map(i=>itemRow(i)).join("")}</div></section>
+  <div class="row"><button class="btn" style="flex:1" data-sayall="intro">${I.play} Play it all</button><button class="btn primary" style="flex:1" data-start="speak" data-scope="intro">${I.mic} Practise saying it</button></div>
+  <p class="small muted">Something wrong? <button class="btn ghost sm" data-go="profile">Edit your profile</button></p></div>`;};
+VIEWS.pack=function(){const pk=myPack();if(!pk)return VIEWS.you();const w=PACK_ITEMS.filter(i=>i.kind==="word"),ph=PACK_ITEMS.filter(i=>i.kind==="phrase");
+  return `<div class="stack lg"><button class="back" data-go="you">${I.chevl} You</button><div class="hero-l">${ill(19,"anim")}</div>
+  <div class="stack" style="gap:6px"><h1>${esc(PACKS[pk].t)}</h1><p class="muted">Vocabulary for your work, on top of the 24 lessons.</p></div>
+  <label class="check small panel flat"><input type="checkbox" id="packT" ${S.packOn?"checked":""} style="width:20px;height:20px;accent-color:var(--accent)"> Include this pack in my daily reviews</label>
+  <div class="row"><button class="btn" style="flex:1" data-start="cards" data-scope="pack">${I.cards} Flashcards</button><button class="btn" style="flex:1" data-start="quiz" data-scope="pack">${I.quiz} Quiz</button></div>
+  <section class="panel"><h3>Words</h3><div class="list">${w.map(i=>itemRow(i)).join("")}</div></section>
+  <section class="panel"><h3>Phrases</h3><div class="list">${ph.map(i=>itemRow(i)).join("")}</div></section></div>`;};
+VIEWS.mine=function(){return `<div class="stack lg"><button class="back" data-go="you">${I.chevl} You</button>
+  <div class="stack" style="gap:6px"><h1>My words</h1><p class="muted">Heard something at work or in a shop? Save it here. It joins your daily reviews straight away.</p></div>
+  <form class="panel stack" id="mineForm"><label class="field"><span>Arabic</span><input type="text" class="ar" dir="rtl" id="m_ar" required maxlength="120" placeholder="يعطيك العافية"></label>
+   <label class="field"><span>Meaning</span><input type="text" id="m_en" required maxlength="120" placeholder="God give you strength"></label>
+   <label class="field"><span>Note <span class="muted">(optional)</span></span><input type="text" id="m_note" maxlength="140" placeholder="Where you heard it, or the reply"></label>
+   <button class="btn primary" type="submit">${I.plus} Save word</button></form>
+  ${MINE_ITEMS.length?`<section class="panel"><div class="list">${MINE_ITEMS.map(i=>`<div class="item"><div class="txt"><span class="ar">${esc(i.ar)}</span><span class="en">${esc(i.en)}</span>${i.note?`<span class="note">${esc(i.note)}</span>`:""}</div><button class="spk" data-say="${esc(i.ar)}" aria-label="Play">${I.spk}</button>${confirmBox===i.id?`<button class="btn sm" data-act="delmine" data-id="${i.id}" style="color:var(--bad)">Delete</button>`:`<button class="spk" data-act="askdel" data-id="${i.id}" aria-label="Delete">${I.trash}</button>`}</div>`).join("")}</div></section>
+   <div class="row"><button class="btn" style="flex:1" data-start="cards" data-scope="mine">${I.cards} Flashcards</button><button class="btn" style="flex:1" data-start="speak" data-scope="mine">${I.mic} Say them</button></div>`
+  :`<div class="empty">${ill(14)}<span>No saved words yet.</span></div>`}</div>`;};
+VIEWS.profile=function(){if(!draft)draft=JSON.parse(JSON.stringify(P()));const d=draft;
+  return `<div class="stack lg"><button class="back" data-act="profback">${I.chevl} You</button><h1>Edit profile</h1>
+  <section class="panel stack"><label class="field"><span>Name</span><input type="text" id="o_name" value="${esc(d.name)}" maxlength="40"></label>
+   <label class="field"><span>Name in Arabic script</span><input type="text" class="ar" dir="rtl" id="o_nameAr" value="${esc(d.nameAr)}" maxlength="40"></label>
+   <div class="field"><span>Phrases describe me</span><div class="seg"><button data-pick-g="m" aria-pressed="${d.gender==="m"}">As a man</button><button data-pick-g="f" aria-pressed="${d.gender==="f"}">As a woman</button></div></div>
+   <label class="field"><span>I'm from</span><select id="o_origin">${ORIGINS.map(o=>`<option value="${o[0]}" ${d.origin===o[0]?"selected":""}>${esc(o[1].replace(/^the /,"The "))}</option>`).join("")}</select></label>
+   ${d.origin==="XX"?`<label class="field"><span>Country in Arabic</span><input type="text" class="ar" dir="rtl" id="o_originAr" value="${esc(d.originAr)}"></label>`:""}
+   <label class="field"><span>I live in</span><select id="o_city">${CITIES.map(o=>`<option value="${o[0]}" ${d.city===o[0]?"selected":""}>${esc(o[1])}</option>`).join("")}</select></label>
+   ${d.city==="XX"?`<label class="field"><span>City in Arabic</span><input type="text" class="ar" dir="rtl" id="o_cityAr" value="${esc(d.cityAr)}"></label>`:""}
+   <label class="field"><span>Work</span><select id="o_field">${FIELDS.map(f=>`<option value="${f[0]}" ${d.field===f[0]?"selected":""}>${esc(f[1])}</option>`).join("")}</select></label></section>
+  <section class="panel stack"><h3>Goals</h3><div class="choices two">${GOALS.map(g=>`<button class="choice" data-pick-goal="${g[0]}" aria-pressed="${d.goals.includes(g[0])}"><b>${esc(g[1])}</b></button>`).join("")}</div>
+   <h3>Study days per week</h3><div class="seg">${[3,5,7].map(n=>`<button data-pick-days="${n}" aria-pressed="${d.days===n}">${n} days</button>`).join("")}</div></section>
+  <div class="preview"><span class="tiny muted">Your introduction will start</span><span class="ar">${esc(withDraft(()=>res("السلام عليكم، اسمي {N}. أنا من {O}")))}</span></div>
+  <button class="btn primary block" data-act="saveprofile">Save profile</button>
+  <section class="panel stack"><h3>Start over</h3><p class="small muted">Run the setup questions again. Your progress stays.</p><button class="btn sm" data-act="reonboard">Redo setup</button></section></div>`;};
+VIEWS.settings=function(){const vo=voices.map(v=>`<option value="${esc(v.name)}" ${pickVoice()&&pickVoice().name===v.name?"selected":""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("");
+  return `<div class="stack lg"><button class="back" data-go="you">${I.chevl} You</button><h1>Settings</h1>
+  <section class="panel stack"><h3>Appearance</h3><div class="swatches">${Object.entries(ACCENTS).map(([k,a])=>`<button class="swatch" style="background:${a[1]}" data-acc="${k}" aria-pressed="${P().accent===k}" aria-label="${a[0]}">${P().accent===k?"✓":""}</button>`).join("")}</div>
+   <div class="seg">${[["system","Match device"],["light","Light"],["dark","Dark"]].map(([k,l])=>`<button data-appear="${k}" aria-pressed="${P().appearance===k}">${l}</button>`).join("")}</div></section>
+  <section class="panel stack"><h3>Speech</h3>
+   <label class="field"><span>Arabic voice</span>${voices.length?`<select id="voiceSel">${vo}</select>`:`<span class="notice"><b>No Arabic voice on this device</b><span>Samsung and other Android: Settings › General management › Text-to-speech › choose Speech Recognition and Synthesis from Google › its gear › Install voice data › Arabic. iPhone: Settings › Accessibility › Spoken Content › Voices › Arabic. Windows: Settings › Time and language › Speech › Add voices › Arabic. Then reopen Kalam.</span></span>`}</label>
+   <label class="field"><span>Speaking speed <span class="num muted" id="rateLbl">${S.rate.toFixed(2)}×</span></span><input type="range" id="rate" min="0.5" max="1.2" step="0.05" value="${S.rate}"></label>
+   <label class="check small"><input type="checkbox" id="autoplay" ${S.autoplay?"checked":""} style="width:20px;height:20px;accent-color:var(--accent)"> Play Arabic automatically</label>
+   <button class="btn sm" data-say="السلام عليكم يا ${esc(pinfo().nameAr)}، كيف حالك؟" style="align-self:flex-start">${I.spk} Test voice</button>
+   <div class="small" style="background:var(--sunk);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column;gap:2px"><b>Sound check</b><span>Voices on this device: ${allVoices}, Arabic: ${voices.length}</span><span>Last test: ${esc(diag)}</span><span>Speech scoring: ${BUILD==="artifact"?"blocked inside Claude":SR?(micBlocked?"microphone refused":"available"):"not supported in this browser"}</span><button class="btn sm" data-act="refreshdiag" style="align-self:flex-start;margin-top:6px">Refresh</button></div>
+   <p class="small muted">Voices speak standard Arabic. Where a card shows the "g" chip, Saudi speakers say ق as "g" (قهوة = gahwa).</p></section>
+  <section class="panel stack"><h3>Study</h3>
+   <label class="field"><span>Current lesson</span><select id="curSel">${COURSE.map(L=>`<option value="${L.n}" ${L.n===S.cur?"selected":""}>Lesson ${L.n}: ${esc(L.t)}</option>`).join("")}</select></label>
+   <label class="field"><span>New words per day</span><input type="number" id="npd" min="0" max="60" inputmode="numeric" value="${S.newPerDay}"></label>
+   <label class="check small"><input type="checkbox" id="quickS" ${S.quick?"checked":""} style="width:20px;height:20px;accent-color:var(--accent)"> Quick mode for lessons (skip end-of-lesson checks)</label></section>
+  <section class="panel stack"><h3>Reset</h3>${confirmBox==="reset"?`<div class="confirm"><span class="grow">Erase your profile, progress and streaks?</span><button class="btn sm" data-act="resetno">Keep it</button><button class="btn sm primary" data-act="resetyes" style="background:var(--bad);border-color:var(--bad)">Erase everything</button></div>`:`<button class="btn sm" data-act="reset" style="align-self:flex-start">Reset everything</button>`}</section></div>`;};
+function backupRestoreUI(){return `<section class="panel stack"><h3>Restore</h3><button class="btn" data-act="pickfile">Choose backup file</button>
+  <label class="field"><span>Or paste a backup code</span><textarea id="restoreTxt" placeholder="Paste here"></textarea></label><button class="btn" data-act="restorepaste">Restore from code</button>
+  ${confirmBox&&confirmBox.restore?`<div class="confirm"><span class="grow">Replace your current progress with the backup for ${esc(confirmBox.restore.profile.name||"this learner")} from ${esc(new Date(confirmBox.at||Date.now()).toLocaleDateString())}?</span><button class="btn sm" data-act="restoreno">Cancel</button><button class="btn sm primary" data-act="restoreyes">Restore</button></div>`:""}</section>`;}
+VIEWS.backup=function(){return `<div class="stack lg"><button class="back" data-go="you">${I.chevl} You</button><h1>Backup and restore</h1>
+  <p class="muted">Progress is ${esc(syncState.toLowerCase())}. Make a backup before clearing your browser, or to move to another phone or laptop.</p>
+  <section class="panel stack"><h3>Back up</h3>${BUILD==="web"?`<button class="btn primary" data-act="download">${I.save} Download backup file</button>`:""}<button class="btn" data-act="copycode">Copy backup code</button>
+   <p class="small muted">The code holds your whole profile and progress. Paste it into Kalam on any device to carry on.</p><textarea id="codeOut" readonly hidden></textarea></section>
+  ${backupRestoreUI()}</div>`;};
+VIEWS.grammar=function(){
+  const P1=[["I","أنا","كتابي","كلّمني"],["you (m)","إنت","كتابك","كلّمك"],["you (f)","إنتي","كتابك","كلّمك"],["he","هو","كتابه","كلّمه"],["she","هي","كتابها","كلّمها"],["we","إحنا","كتابنا","كلّمنا"],["you (pl)","إنتم","كتابكم","كلّمكم"],["they","هم","كتابهم","كلّمهم"]];
+  const K=[["I","كتبت","أكتب","بكتب",""],["you (m)","كتبت","تكتب","بتكتب","اكتب"],["you (f)","كتبتي","تكتبين","بتكتبين","اكتبي"],["he","كتب","يكتب","بيكتب",""],["she","كتبت","تكتب","بتكتب",""],["we","كتبنا","نكتب","بنكتب",""],["you (pl)","كتبتوا","تكتبون","بتكتبون","اكتبوا"],["they","كتبوا","يكتبون","بيكتبون",""]];
+  const H=[["I","رحت","أروح",""],["you (m)","رحت","تروح","روح"],["you (f)","رحتي","تروحين","روحي"],["he","راح","يروح",""],["she","راحت","تروح",""],["we","رحنا","نروح",""],["they","راحوا","يروحون",""]];
+  const X=[["come","جا","جيت","أجي","تعال"],["give","عطى","عطيت","أعطي","عطني"],["eat","كل","كليت","آكل","كل"],["take","أخذ","أخذت","آخذ","خذ"],["want","","","أبغى",""],["can","","","أقدر",""]];
+  const tb=(hd,rows)=>`<div class="tablewrap"><table><thead><tr>${hd.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((c,i)=>i===0?`<td>${c}</td>`:`<td class="ar">${c?`${c} <button class="spk" style="width:30px;height:30px;display:inline-grid;vertical-align:middle" data-say="${c}" aria-label="Play">${I.spk}</button>`:""}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  return `<div class="stack lg"><button class="back" data-go="you">${I.chevl} You</button><h1>Grammar reference</h1>
+  <section class="panel stack"><h3>Pronouns and endings</h3>${tb(["Person","Pronoun","My book…","Called me…"],P1)}</section>
+  <section class="panel stack"><h3>Regular verb <span class="ar">كتب</span> (write)</h3>${tb(["Person","Past","Present","Future","Command"],K)}</section>
+  <section class="panel stack"><h3>Hollow verb <span class="ar">راح</span> (go)</h3><p class="small muted">Verbs with a weak middle letter shorten in the past for I, you and we. Same pattern: شاف, قال, نام.</p>${tb(["Person","Past","Present","Command"],H)}</section>
+  <section class="panel stack"><h3>Irregular verbs</h3>${tb(["Meaning","Past (he)","Past (I)","Present (I)","Command"],X)}</section></div>`;};
+VIEWS.search=function(){const q=view.q||"";const nq=norm(q),lq=q.toLowerCase().trim();
+  const r=q?ITEMS.filter(i=>(nq&&norm(i.ar).includes(nq))||(lq&&(i.en.toLowerCase().includes(lq)||i.note.toLowerCase().includes(lq)))).slice(0,80):[];
+  return `<div class="stack lg"><h1>Search</h1><input type="search" id="sq" placeholder="English or Arabic, e.g. coffee or قهوة" value="${esc(q)}" aria-label="Search">
+  ${q?`<p class="small muted">${r.length} result${r.length===1?"":"s"}</p><section class="panel"><div class="list">${r.map(it=>itemRow(it,`<span class="tiny muted">${it.lesson?`Lesson ${it.lesson}`:it.src==="pack"?"Work pack":it.src==="mine"?"My words":"About you"}${it.root?` · root <span class="ar">${esc(it.root)}</span>`:""}</span>`)).join("")||'<div class="empty">No matches.</div>'}</div></section>`:`<p class="muted small">Searches all ${ITEMS.length} words and phrases, including your work pack and saved words.</p>`}</div>`;};
+VIEWS.weak=function(){const w=weak();return `<div class="stack lg"><button class="back" data-go="home">${I.chevl} Home</button><h1>Weak words</h1><p class="muted">Missed two or more times in reviews, quizzes or speaking.</p>
+  ${w.length?`<div class="row"><button class="btn primary" style="flex:1" data-start="cards" data-scope="weak">${I.cards} Drill them</button><button class="btn" style="flex:1" data-start="speak" data-scope="weak">${I.mic} Say them</button></div><section class="panel"><div class="list">${w.map(i=>itemRow(i)).join("")}</div></section>`:`<div class="empty">${ill(10)}<span>Nothing here. Nice work.</span></div>`}</div>`;};
+
+// ================= backup helpers =================
+function exportJSON(){return JSON.stringify({app:"kalam",v:2,at:Date.now(),state:S});}
+function b64e(s){return btoa(unescape(encodeURIComponent(s)));}
+function b64d(s){return decodeURIComponent(escape(atob(s.replace(/\s+/g,""))));}
+function parseBackup(txt){txt=(txt||"").trim();let o=null;try{o=JSON.parse(txt);}catch(e){try{o=JSON.parse(b64d(txt));}catch(e2){}}
+  if(o&&o.app==="kalam"&&o.state&&o.state.profile)return o;if(o&&o.cards)return {app:"kalam",at:Date.now(),state:migrate(o)};return null;}
+function askRestore(txt){const o=parseBackup(txt);if(!o){toast("That isn't a Kalam backup. Check you copied all of it.");return;}confirmBox={restore:o.state,at:o.at};render();}
+
+// ================= confetti =================
+function confetti(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;const c=$("#confetti");c.hidden=false;const x=c.getContext("2d");const W=c.width=innerWidth,H=c.height=innerHeight;
+  const cs=getComputedStyle(document.documentElement);const cols=[cs.getPropertyValue("--accent"),cs.getPropertyValue("--gold"),cs.getPropertyValue("--good"),cs.getPropertyValue("--indigo")].map(s=>s.trim()||"#a3262e");
+  const ps=Array.from({length:110},()=>({x:W/2+(Math.random()-.5)*W*.4,y:H*.35,vx:(Math.random()-.5)*9,vy:-Math.random()*10-3,s:Math.random()*6+4,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:cols[Math.floor(Math.random()*cols.length)]}));
+  let t=0;(function f(){x.clearRect(0,0,W,H);ps.forEach(p=>{p.vy+=.32;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;x.globalAlpha=Math.max(0,1-t/90);x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);x.restore();});
+    if(++t<95)requestAnimationFrame(f);else{x.clearRect(0,0,W,H);c.hidden=true;}})();}
+
+// ================= install =================
+let deferredPrompt=null;
+const isStandalone=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+const isIOS=()=>/iphone|ipad|ipod/i.test(navigator.userAgent);
+if(BUILD==="web"){window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;if(view.name==="home"||view.name==="you")render();});
+  window.addEventListener("appinstalled",()=>{deferredPrompt=null;toast("Kalam is installed.");render();});
+  if("serviceWorker" in navigator&&(location.protocol==="https:"||location.hostname==="localhost"))window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}
+
+// ================= events =================
+function setDraft(k,v){draft[k]=v;render();}
+document.addEventListener("click",async e=>{
+  const fc=e.target.closest("#flashcard");if(fc&&view.name==="cards"&&!session.shown&&!e.target.closest("button")){flip();return;}
+  const b=e.target.closest("button");if(!b)return;const d=b.dataset;
+  if(d.tab){go(d.tab);return;}
+  if(d.say){say(d.say,null,b.classList.contains("spk")?b:null);return;}
+  if(d.sayslow){say(d.sayslow,Math.max(.5,S.rate-.3));return;}
+  if(d.sayall){let list=[];if(d.sayall==="F")list=session.steps[session.pos].items.map(i=>i.ar);else if(d.sayall==="intro")list=INTRO_ITEMS.map(i=>i.ar);else list=LESSON_ITEMS[+d.sayall.slice(1)].filter(i=>i.kind==="phrase").map(i=>i.ar);sayList(list);return;}
+  if(d.go){if(d.go==="restore"){view={name:"restore"};render();return;}go(d.go);return;}
+  if(d.open){go("lesson",{n:+d.open});return;}
+  if(d.flow){startFlow(+d.flow,d.chain?Math.min(2,24-+d.flow):0);return;}
+  if(d.root){go("root",{k:d.root});return;}
+  if(d.pscope){pScope=d.pscope;render();return;}
+  if(d.start){if(d.start==="cards")startCards(d.scope);else if(d.start==="speak")startSpeak(d.scope);else startQuiz(d.start,d.scope);return;}
+  if(d.grade){doGrade(+d.grade);return;}
+  if(d.pick){const s=session,q=s.q[s.pos];if(q.picked)return;q.picked=d.pick;S.stat.q++;
+    if(d.pick===q.id){s.right++;S.stat.c++;buzz(12);}else{S.miss[q.id]=(S.miss[q.id]||0)+1;buzz([20,40,20]);}bump();persist();render();if(q.dir!=="listen")say(BYID[q.id].ar);if(s.pos+1>=s.q.length)setTimeout(()=>{},0);return;}
+  if(d.fpick){const s=session,st=s.steps[s.pos];if(st.picked)return;st.picked=d.fpick;S.stat.q++;
+    if(d.fpick===st.id){s.right++;S.stat.c++;buzz(12);}else{S.miss[st.id]=(S.miss[st.id]||0)+1;buzz([20,40,20]);}persist();render();say(BYID[st.id].ar);return;}
+  if(d.self){const s=session,id=s.q[s.pos];if(d.self==="1"){s.good++;const st=S.speak[id]||{n:0,b:0};st.n++;st.b=Math.max(st.b,.9);S.speak[id]=st;}else{S.miss[id]=(S.miss[id]||0)+1;s.q.push(id);}bump();persist();s.pos++;s.res=null;render();if(s.pos>=s.q.length)confetti();return;}
+  if(d.pickG){setDraft("gender",d.pickG);return;}
+  if(d.pickF){setDraft("field",d.pickF);return;}
+  if(d.pickGoal){const g=draft.goals;const i=g.indexOf(d.pickGoal);if(i>=0)g.splice(i,1);else g.push(d.pickGoal);render();return;}
+  if(d.pickL){setDraft("level",+d.pickL);return;}
+  if(d.pickM){setDraft("mins",+d.pickM);return;}
+  if(d.pickDays){setDraft("days",+d.pickDays);return;}
+  if(d.pickAcc){draft.accent=d.pickAcc;const real=S.profile;S.profile=draft;applyLook();S.profile=real;render();return;}
+  if(d.acc){P().accent=d.acc;applyLook();persist();render();return;}
+  if(d.appear){P().appearance=d.appear;if(d.appear==="system")document.documentElement.removeAttribute("data-theme");applyLook();persist();render();return;}
+  switch(d.act){
+    case "onbnext":if(ONB[onbStep]==="plan"){finishOnboarding();return;}onbStep++;render();window.scrollTo(0,0);break;
+    case "onbback":onbStep=Math.max(0,onbStep-1);render();break;
+    case "restoreback":view={name:"onboard"};render();break;
+    case "review":startCards("review");break;
+    case "flip":flip();break;
+    case "nextq":session.pos++;render();if(session.pos>=session.q.length)confetti();else if(session.kind==="listen")setTimeout(()=>say(BYID[session.q[session.pos].id].ar),150);break;
+    case "flownext":flowNext();break;
+    case "flowexit":go("lessons");break;
+    case "flownextlesson":{const s=session;const nx=suggestAfter(s.n);if(nx)startFlow(nx,Math.max(0,s.chain-1));break;}
+    case "fmic":{const s=session,st=s.steps[s.pos];micGo(st.id,s,r=>{st.res=r;render();});break;}
+    case "mic":{const s=session;s.res=null;micGo(s.q[s.pos],s,r=>{s.res=r;if(r.score>=.85)s.good++;render();});break;}
+    case "record":recordMe();break;
+    case "playme":if(session.recUrl){try{new Audio(session.recUrl).play();}catch(err){}}break;
+    case "skip":session.pos++;session.res=null;session.recUrl=null;render();if(session.pos>=session.q.length)confetti();break;
+    case "nexts":session.pos++;session.res=null;session.recUrl=null;render();if(session.pos>=session.q.length)confetti();break;
+    case "install":if(deferredPrompt){deferredPrompt.prompt();try{await deferredPrompt.userChoice;}catch(err){}deferredPrompt=null;render();}break;
+    case "installhelp":toast(isIOS()?"In Safari tap Share, then Add to Home Screen.":"In Chrome tap ⋮, then Install app or Add to Home screen.");break;
+    case "dismissinstall":S.dismiss.install=1;persist();render();break;
+    case "saveprofile":{if(!draft.name.trim()){toast("Add your name first.");return;}S.profile=draft;draft=null;persist();applyLook();buildItems();toast("Profile saved. Your phrases are updated.");go("you");break;}
+    case "profback":draft=null;go("you");break;
+    case "reonboard":draft=null;P().done=false;onbStep=1;persist();render();break;
+    case "askdel":confirmBox=d.id;render();break;
+    case "delmine":S.mine=S.mine.filter(m=>m.id!==d.id);delete S.cards[d.id];confirmBox=null;persist();buildItems();render();toast("Word deleted.");break;
+    case "refreshdiag":loadVoices();render();break;
+    case "reset":confirmBox="reset";render();break;
+    case "resetno":confirmBox=null;render();break;
+    case "resetyes":S=fresh();try{localStorage.removeItem(KEY);localStorage.removeItem(OLD);}catch(err){}persist();applyLook();buildItems();confirmBox=null;draft=null;onbStep=0;render();break;
+    case "download":{const blob=new Blob([exportJSON()],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=`kalam-backup-${dstr()}.json`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);toast("Backup downloaded.");break;}
+    case "copycode":{const code=b64e(exportJSON());try{await navigator.clipboard.writeText(code);toast("Backup code copied. Keep it somewhere safe.");}catch(err){const t=$("#codeOut");t.hidden=false;t.value=code;t.select();toast("Copy the selected code.");}break;}
+    case "pickfile":$("#fileIn").click();break;
+    case "restorepaste":askRestore($("#restoreTxt").value);break;
+    case "restoreno":confirmBox=null;render();break;
+    case "restoreyes":{S=migrate(confirmBox.restore);confirmBox=null;persist();applyLook();buildItems();toast("Backup restored.");go("home");break;}
+  }
+});
+$("#fileIn").addEventListener("change",e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>askRestore(String(r.result));r.readAsText(f);e.target.value="";});
+document.addEventListener("submit",e=>{if(e.target.id==="mineForm"){e.preventDefault();const ar=$("#m_ar").value.trim(),en=$("#m_en").value.trim(),note=$("#m_note").value.trim();if(!ar||!en)return;
+  S.mine.push({id:"M"+Date.now().toString(36),ar,en,note});persist();buildItems();render();toast("Saved. It's in your reviews now.");}});
+document.addEventListener("change",e=>{const t=e.target;
+  if(t.dataset.task){S.tasks[t.dataset.task]=t.checked;persist();if(t.checked){toast("Task done. Nice.");buzz(12);}return;}
+  if(t.id==="voiceSel"){S.voice=t.value;persist();say("مرحبا");}
+  if(t.id==="curSel"){S.cur=+t.value;persist();toast(`Lesson ${S.cur} is up next.`);}
+  if(t.id==="npd"){S.newPerDay=Math.max(0,Math.min(60,+t.value||0));persist();}
+  if(t.id==="autoplay"){S.autoplay=t.checked;persist();}
+  if(t.id==="quickT"||t.id==="quickS"){S.quick=t.checked;persist();}
+  if(t.id==="packT"){S.packOn=t.checked;persist();}
+  if(t.id==="o_origin"){draft.origin=t.value;render();}
+  if(t.id==="o_city"){draft.city=t.value;render();}
+  if(t.id==="o_field"){draft.field=t.value;}
+});
+document.addEventListener("input",e=>{const t=e.target;
+  if(t.id==="rate"){S.rate=+t.value;$("#rateLbl").textContent=S.rate.toFixed(2)+"×";persist();}
+  if(["o_name","o_nameAr","o_originAr","o_cityAr"].includes(t.id)){draft[t.id.slice(2)]=t.value;
+    if(view.name==="onboard"){const pv=$("#o_prev");if(pv)pv.textContent="اسمي "+(draft.nameAr||draft.name||"...");const nb=document.querySelector('[data-act="onbnext"]');if(nb&&ONB[onbStep]==="name")nb.disabled=!draft.name.trim();}}
+  if(t.id==="sq"||t.id==="rootq"){const pos=t.selectionStart;view.q=t.value;render();const n=document.getElementById(t.id);if(n){n.focus();try{n.setSelectionRange(pos,pos);}catch(err){}}}
+});
+document.addEventListener("keydown",e=>{if(e.target.matches("input,textarea,select"))return;const s=session;
+  if(view.name==="cards"&&s){if(e.key===" "&&!s.shown){e.preventDefault();flip();}else if(s.shown&&["1","2","3","4"].includes(e.key))doGrade(+e.key-1);return;}
+  if((view.name==="quiz"||view.name==="listen")&&s&&s.q[s.pos]){const q=s.q[s.pos];if(!q.picked&&["1","2","3","4"].includes(e.key)){const o=document.querySelectorAll("[data-pick]")[+e.key-1];if(o)o.click();}else if(q.picked&&e.key==="Enter"){const n=document.querySelector('[data-act="nextq"]');n&&n.click();}return;}
+  if(view.name==="flow"&&s){const st=s.steps[s.pos];if(st.t==="check"&&!st.picked&&["1","2","3","4"].includes(e.key)){const o=document.querySelectorAll("[data-fpick]")[+e.key-1];o&&o.click();return;}
+    if(e.key==="Enter"||e.key==="ArrowRight"){e.preventDefault();if(st.t==="done"){const n=document.querySelector('[data-act="flownextlesson"]');n&&n.click();}else flowNext();}
+    if(e.key==="Escape")go("lessons");}
+});
+let tx=null,ty=null;
+document.addEventListener("touchstart",e=>{if(view.name!=="cards"||!session||!session.shown)return;if(!e.target.closest("#flashcard"))return;tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+document.addEventListener("touchmove",e=>{if(tx===null)return;const dx=e.touches[0].clientX-tx;const c=$("#flashcard");if(c){c.style.transform=`translateX(${dx*.4}px) rotate(${dx*.02}deg)`;c.style.borderColor=dx>40?"var(--good)":dx<-40?"var(--bad)":"";}},{passive:true});
+document.addEventListener("touchend",e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;tx=null;const c=$("#flashcard");if(c){c.style.transform="";c.style.borderColor="";}if(Math.abs(dx)>80&&Math.abs(dx)>Math.abs(dy)*1.5)doGrade(dx>0?2:0);});
+
+applyLook();buildItems();render();
+})();
+</script>
+</body></html>
